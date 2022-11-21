@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private bool isFacingRight = true;
     private float movementDirection;
 
-    [SerializeField] Transform frontCheck;
+    [SerializeField] Transform wallCheck;
     bool wallSliding;
     [SerializeField] public float wallSlidingSpeed;    
 
@@ -41,6 +41,37 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
         }
+        
+        // else if(Input.GetButtonDown("Jump") && wallSliding)
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+        // }
+
+        if(isFacingWall() && IsGrounded()==false && Input.GetAxis("Horizontal") != 0) 
+        {
+            wallSliding = true;
+        }else
+        {
+            wallSliding = false;
+        }
+
+        if(Input.GetButtonDown("Jump") && wallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+        }
+        else if(wallSliding) 
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed);
+            // if(Input.GetButtonDown("Jump"))
+            // {
+            //     rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
+            // }
+            //Mathf.Clamp(rb.velocity.y, -wallSlidingSpeed, float.MaxValue)
+            print("wallslide");
+        }
+        
+
+        
 
         if(isFacingRight && movementDirection < 0)
         {
@@ -66,6 +97,11 @@ public class PlayerController : MonoBehaviour
     bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
+    }
+
+    bool isFacingWall()
+    {
+        return Physics2D.OverlapCircle(wallCheck.position, 0.1f, ground);
     }
 
     void Flip()
