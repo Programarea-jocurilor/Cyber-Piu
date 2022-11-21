@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 293568251}
   - component: {fileID: 293568250}
   - component: {fileID: 293568252}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ GameObject:
   - component: {fileID: 1081946770}
   - component: {fileID: 1081946769}
   - component: {fileID: 1081946771}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1512,7 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197052472}
   - component: {fileID: 1197052471}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1712,7 +1712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406534135}
   - component: {fileID: 1406534134}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2232,6 +2232,14 @@ PrefabInstance:
     - target: {fileID: 1138660681364175459, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_Name
       value: PlayerCaracter
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: jumpVelocity
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: wallSlidingSpeed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175484, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_SortingOrder
