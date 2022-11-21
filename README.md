@@ -1,10 +1,10 @@
 # Cyber-Piu
 
-##This is a project for the Introduction to Game-Development course.
+## This is a project for the Introduction to Game-Development course.
 
-##Storyline
+## Storyline
 
-##Team Members
+## Team Members
 - Grejdan Mirolena Violeta
 - Nadolo-Buzneri Corrado
 - Bercaru Ana teodora
