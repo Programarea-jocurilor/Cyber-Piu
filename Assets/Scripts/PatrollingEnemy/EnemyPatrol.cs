@@ -16,6 +16,9 @@ public class EnemyPatrol : MonoBehaviour
     private Vector3 initScale;
     private bool movingLeft;
 
+    [Header ("Enemy Animator")]
+    private Animator anim;
+
     private void Awake()
     {
         initScale = enemy.localScale;
