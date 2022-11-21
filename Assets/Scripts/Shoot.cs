@@ -12,7 +12,6 @@ public class Shoot : MonoBehaviour
     private float timer;
 
     private float distance;
-
     // Start is called before the first frame update
     void Start()
     {
