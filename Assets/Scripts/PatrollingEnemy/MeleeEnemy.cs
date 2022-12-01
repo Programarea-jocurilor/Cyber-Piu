@@ -76,21 +76,6 @@ public class MeleeEnemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    // private void DamagePlayer()
-    // {
-    //     if(PlayerInSight())
-    //     {
-    //         playerHealth = playerHealth - damage;
-    //     }
-    // }
-
-
-    //functia lui corrado dar nu cred ca mai trebuie
-    // public void DealDamage(int dmg) 
-    // {
-    //     currentHealth -= dmg;
-    // }
-
     IEnumerator WaitAndDie()
     {
         yield return new WaitForSeconds(1);
@@ -129,4 +114,5 @@ public class MeleeEnemy : MonoBehaviour
             
         }
     }
+
 }
