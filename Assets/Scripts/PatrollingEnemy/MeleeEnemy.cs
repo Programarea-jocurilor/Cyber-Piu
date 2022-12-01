@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
+    [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
+
+    [Header ("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
+
+    [Header ("PlayerLayer")]
+    [SerializeField] private LayerMask playerLayer;
+
+    [Header ("Health")]
+    [SerializeField] public int maxHealth;
+    public int currentHealth;
 
     //References
     private Animator anim;
@@ -24,7 +33,11 @@ public class MeleeEnemy : MonoBehaviour
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        currentHealth = maxHealth;         
+    }
+
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
@@ -50,8 +63,8 @@ public class MeleeEnemy : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
                 0, Vector2.left, 0, playerLayer);
-        if(hit.collider != null)
-            playerHealth = PlayerPrefs.GetInt("currentHealth");
+        // if(hit.collider != null)
+        //     playerHealth = PlayerPrefs.GetInt("currentHealth");
 
         return hit.collider != null;
     }
@@ -63,11 +76,37 @@ public class MeleeEnemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer()
+    // private void DamagePlayer()
+    // {
+    //     if(PlayerInSight())
+    //     {
+    //         playerHealth = playerHealth - damage;
+    //     }
+    // }
+
+
+    //functia lui corrado dar nu cred ca mai trebuie
+    // public void DealDamage(int dmg) 
+    // {
+    //     currentHealth -= dmg;
+    // }
+
+
+    private void OnTriggerEnter2D(Collider2D external)
     {
-        if(PlayerInSight())
+        if(external.gameObject.CompareTag("Player"))
         {
-            playerHealth = playerHealth - damage;
+            PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage);
+        }
+
+        if(external.gameObject.CompareTag("Weapon"))
+        {
+            currentHealth -= 1;
+            anim.SetTrigger("hurt2");
+            if(currentHealth<=0)
+            {
+                this.transform.position = new Vector2(0, -1000);
+            }
         }
     }
 }
