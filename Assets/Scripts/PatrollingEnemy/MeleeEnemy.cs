@@ -91,22 +91,42 @@ public class MeleeEnemy : MonoBehaviour
     //     currentHealth -= dmg;
     // }
 
+    IEnumerator WaitAndDie()
+    {
+        yield return new WaitForSeconds(1);
+        this.transform.position = new Vector2(0, -1000);
+    }
+
+    IEnumerator WaitWhileHurt()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponentInParent<EnemyPatrol>().enabled = true;
+    }
 
     private void OnTriggerEnter2D(Collider2D external)
     {
         if(external.gameObject.CompareTag("Player"))
         {
-            PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage);
+            PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage); 
         }
 
         if(external.gameObject.CompareTag("Weapon"))
         {
             currentHealth -= 1;
-            anim.SetTrigger("hurt2");
+            
             if(currentHealth<=0)
             {
-                this.transform.position = new Vector2(0, -1000);
+                anim.SetTrigger("dead");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitAndDie());
             }
+            else
+            {
+                anim.SetTrigger("hurt2");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitWhileHurt());
+            }
+            
         }
     }
 }
