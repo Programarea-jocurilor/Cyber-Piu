@@ -2313,7 +2313,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: wallSlidingSpeed
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175484, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_SortingOrder
@@ -2366,7 +2366,7 @@ PrefabInstance:
     - target: {fileID: 1138660681364175486, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6200000, guid: a7068b35d2c708b439aea18678d2618e, type: 2}
     - target: {fileID: 1138660681364175486, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_GravityScale
       value: 3
