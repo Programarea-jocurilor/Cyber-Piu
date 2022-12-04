@@ -313,7 +313,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a7068b35d2c708b439aea18678d2618e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -356,7 +356,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   wallCheck: {fileID: 6437026653929240237}
-  wallSlidingSpeed: 6
+  wallSlidingSpeed: 2
   xWallForce: 15
   yWallForce: 10
   wallJumpTime: 0.4

@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float yWallForce;
     public float wallJumpTime;
     private float initialDirection;
+    private bool jumpAgain;
 
     [Header ("Dash")]
     public float dashSpeed;
@@ -52,7 +53,7 @@ public class PlayerController : MonoBehaviour
 
         if(Input.GetButtonDown("Jump") && IsGrounded()) {
             rb.velocity = new Vector2(rb.velocity.x, jumpVelocity);
-        }
+        }     
 
         if(isFacingWall() && IsGrounded()==false && Input.GetAxis("Horizontal") != 0) { // 
             WallGrab();
@@ -79,6 +80,10 @@ public class PlayerController : MonoBehaviour
             Invoke("SetWallJumpingToFalse", wallJumpTime);
         }
 
+        if(wallJumping==true && isFacingWall()) {
+            WallGrab();
+        }
+
         if(wallJumping==true) {
             rb.velocity = new Vector2(xWallForce * initialDirection, yWallForce);
 
@@ -88,7 +93,9 @@ public class PlayerController : MonoBehaviour
             Flip();
         }
 
-
+        if(wallJumping==true && isFacingWall() && Input.GetButtonDown("Jump")) {
+            jumpAgain=true;
+        }
 
         if(wallSliding) {
             rb.velocity = new Vector2(rb.velocity.x, -wallSlidingSpeed);
@@ -130,7 +137,18 @@ public class PlayerController : MonoBehaviour
     }
 
     void SetWallJumpingToFalse() {
-        wallJumping = false;
+
+        if(isFacingWall() && jumpAgain==true) {
+            if(isFacingRight) {
+                initialDirection = -1;
+            }else {
+                initialDirection = 1;
+            }
+            Flip();            
+            Invoke("SetWallJumpingToFalse", wallJumpTime);
+        }
+        else
+            wallJumping = false;
         // if(isFacingWall() && IsGrounded()==false) { // 
         //     wallSliding = true;
         // }
