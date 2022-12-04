@@ -50,11 +50,10 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("fighting");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitAndFight());
             }
         } 
-
-        // if (enemyPatrol != null)  
-        // enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
@@ -63,8 +62,6 @@ public class MeleeEnemy : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
                 0, Vector2.left, 0, playerLayer);
-        // if(hit.collider != null)
-        //     playerHealth = PlayerPrefs.GetInt("currentHealth");
 
         return hit.collider != null;
     }
@@ -74,18 +71,6 @@ public class MeleeEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance,
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
-    }
-
-    IEnumerator WaitAndDie()
-    {
-        yield return new WaitForSeconds(1);
-        this.transform.position = new Vector2(0, -1000);
-    }
-
-    IEnumerator WaitWhileHurt()
-    {
-        yield return new WaitForSeconds(1);
-        GetComponentInParent<EnemyPatrol>().enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D external)
@@ -113,6 +98,24 @@ public class MeleeEnemy : MonoBehaviour
             }
             
         }
+    }
+
+    IEnumerator WaitAndFight()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GetComponentInParent<EnemyPatrol>().enabled = true;
+    }
+
+    IEnumerator WaitAndDie()
+    {
+        yield return new WaitForSeconds(1);
+        this.transform.position = new Vector2(0, -1000);
+    }
+
+    IEnumerator WaitWhileHurt()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponentInParent<EnemyPatrol>().enabled = true;
     }
 
 }
