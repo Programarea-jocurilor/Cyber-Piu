@@ -68,11 +68,6 @@ public class EnemyPatrol : MonoBehaviour
     {
         //Make enemy face direction
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction * (-1), initScale.y, initScale.z);
-
-        // if (IsGrounded() == true)
-        // {
-        //     rb.velocity = new Vector2(rb.velocity.x + Time.deltaTime * _direction * speed, rb.velocity.y);
-        // }
         
         //Move in that direction
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
@@ -86,7 +81,6 @@ public class EnemyPatrol : MonoBehaviour
     }
 
     bool IsGrounded() {
-        Debug.Log(Physics2D.OverlapCircle(groundCheck.position, 0.01f, ground));
         return Physics2D.OverlapCircle(groundCheck.position, 0.01f, ground);
     }
 
