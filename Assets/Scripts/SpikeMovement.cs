@@ -11,12 +11,38 @@ public class SpikeMovement : MonoBehaviour
     private bool moveRight;
 
     private bool moveLeft;
+
+     public GameObject objectToShoot; //cu ce trag
+
+    public Transform objectToShootTransform;
+
+    public Transform playerTransform;
+    private float timer;
     // Start is called before the first frame update
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
         moveLeft=false;
         moveRight=true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        timer+=Time.deltaTime;
+        if(timer>1) //daca au trecut 2 secunde
+        {
+            timer=0; //resetam timerul
+            EnemyShoot();//trage
+        }
+        
+    }
+
+    void EnemyShoot()
+    {
+        GameObject objectToShootClone=Instantiate(objectToShoot,objectToShootTransform.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
+        objectToShootClone.SetActive(true);
+        Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy
     }
 
     // Update is called once per frame
@@ -73,4 +99,6 @@ public class SpikeMovement : MonoBehaviour
             moveRight=false;
         }
     }
+
+    //IDEEA: asta e un enemy care hovers around the player si trage in el rapid
 }
