@@ -359,7 +359,7 @@ MonoBehaviour:
   wallSlidingSpeed: 2
   xWallForce: 15
   yWallForce: 10
-  wallJumpTime: 0.4
+  wallJumpTime: 0.3
   dashSpeed: 26
   dashTime: 0.2
   attack: {fileID: 1138660680690040948}
