@@ -1512,6 +1512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1197052472}
   - component: {fileID: 1197052471}
+  - component: {fileID: 1197052473}
   m_Layer: 3
   m_Name: Square (1)
   m_TagString: Untagged
@@ -1586,6 +1587,32 @@ Transform:
   m_Father: {fileID: 417197570}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1197052473
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197052470}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1266670128 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5204101157754696860, guid: 77b5f6394c2c3214ea976e1fdc709f1b, type: 3}
@@ -1712,6 +1739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1406534135}
   - component: {fileID: 1406534134}
+  - component: {fileID: 1406534136}
   m_Layer: 3
   m_Name: Square
   m_TagString: Untagged
@@ -1786,6 +1814,32 @@ Transform:
   m_Father: {fileID: 417197570}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -45}
+--- !u!61 &1406534136
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406534133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1618788308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2234,12 +2288,32 @@ PrefabInstance:
       value: PlayerCaracter
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: dashSpeed
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: xWallForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: yWallForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: jumpVelocity
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: wallJumpTime
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1138660681364175480, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: wallSlidingSpeed
-      value: 6
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175484, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_SortingOrder
@@ -2292,6 +2366,14 @@ PrefabInstance:
     - target: {fileID: 1138660681364175486, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 6200000, guid: a7068b35d2c708b439aea18678d2618e, type: 2}
+    - target: {fileID: 1138660681364175486, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: m_GravityScale
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6437026653929240237, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1138660681364175481, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}

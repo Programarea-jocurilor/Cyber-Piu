@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    [Header ("Ground")]
+    [SerializeField] Transform groundCheck;    
+    [SerializeField] LayerMask ground;
+    public Rigidbody2D rb;
+
     [Header ("Patrol points")]
     [SerializeField] private Transform leftEdge;
     [SerializeField] private Transform rightEdge;
@@ -27,7 +32,7 @@ public class EnemyPatrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -63,14 +68,24 @@ public class EnemyPatrol : MonoBehaviour
     {
         //Make enemy face direction
         enemy.localScale = new Vector3(Mathf.Abs(initScale.x) * _direction * (-1), initScale.y, initScale.z);
-
+        
         //Move in that direction
         enemy.position = new Vector3(enemy.position.x + Time.deltaTime * _direction * speed,
             enemy.position.y, enemy.position.z);
+        
     }
 
     private void DirectionChange()
     {
         movingLeft = !movingLeft;
     }
+
+    bool IsGrounded() {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.01f, ground);
+    }
+
+    // bool isFacingWall() {
+    //     return Physics2D.OverlapCircle(wallCheck.position, 0.01f, ground);
+    // }
+
 }
