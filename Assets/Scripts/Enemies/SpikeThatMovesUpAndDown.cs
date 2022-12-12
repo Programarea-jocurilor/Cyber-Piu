@@ -2,36 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeMovement : MonoBehaviour
+public class SpikeThatMovesUpAndDown : MonoBehaviour
 {
     private Rigidbody2D rb;
 
     public float speed;
 
-    private bool moveRight;
+    private bool moveUp;
 
-    private bool moveLeft;
+    private bool moveDown;
 
     private Animator spikeAnimator;
     // Start is called before the first frame update
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
-        moveLeft=false;
-        moveRight=true;
+        moveDown=false;
+        moveUp=true;
         spikeAnimator=GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(moveRight)
+        if(moveUp)
         {
-            rb.velocity=Vector2.right*speed;
+            rb.velocity=Vector2.up*speed;
         }
-        if(moveLeft)
+        if(moveDown)
         {
-            rb.velocity=Vector2.left*speed;
+            rb.velocity=Vector2.down*speed;
         }
     }
 
@@ -39,14 +39,14 @@ public class SpikeMovement : MonoBehaviour
     {
         if(collider.gameObject.tag=="MarginLeft")
         {
-            moveLeft=false;
-            moveRight=true;
+            moveDown=true;
+            moveUp=false;
             spikeAnimator.SetBool("switchAnimation",false);
         }
          if(collider.gameObject.tag=="MarginRight")
         {
-            moveLeft=true;
-            moveRight=false;
+            moveDown=false;
+            moveUp=true;
             spikeAnimator.SetBool("switchAnimation",true);
         }
     }

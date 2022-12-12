@@ -12,18 +12,13 @@ public class Shoot : MonoBehaviour
     private float timer;
 
     private float distance;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+  
     // Update is called once per frame
     void Update()
     {
-    
+        Debug.Log(Vector2.Distance(this.transform.position,playerTransform.position));
         distance=Vector2.Distance(transform.position,playerTransform.position);
-        if(distance<10)// trage doar daca suntem la o distanta mai mica de 10
+        if(distance<=20)// trage doar daca suntem la o distanta mai mica de 10
         {
             timer+=Time.deltaTime;
             if(timer>2) //daca au trecut 2 secunde

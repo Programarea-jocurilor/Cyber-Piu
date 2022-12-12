@@ -20,15 +20,9 @@ public class ObjectToShoot : MonoBehaviour
         transform.rotation=Quaternion.Euler(0,0,objectToShootRotation+90); //orientam efectiv varful a ceea ce trage spre player
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.tag=="Player")
+        if(collider.gameObject.tag=="Player"||collider.gameObject.tag=="Ground")
             Destroy(this.gameObject);
     }
 }

@@ -21,12 +21,12 @@ public class EnemyThatShootsAtCertainFireRangeShoot : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer>2) //daca au trecut 2 secunde
+        if(timer>2&&Vector2.Distance(this.transform.position,playerTransform.position)<=20f) //daca au trecut 2 secunde
         {
             timer=0; //resetam timerul
             EnemyShoot();//trage
         }
-        
+        //Debug.Log(Vector2.Distance(this.transform.position,playerTransform.position));
     }
 
     void EnemyShoot()

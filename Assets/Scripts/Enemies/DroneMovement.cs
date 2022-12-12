@@ -30,12 +30,12 @@ public class DroneMovement : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer>1) //daca au trecut 2 secunde
+        if(timer>1&&Vector2.Distance(this.transform.position,playerTransform.position)<=20f) //daca au trecut 2 secunde
         {
             timer=0; //resetam timerul
             EnemyShoot();//trage
         }
-        
+        //Debug.Log(Vector2.Distance(this.transform.position,playerTransform.position));
     }
 
     void EnemyShoot()

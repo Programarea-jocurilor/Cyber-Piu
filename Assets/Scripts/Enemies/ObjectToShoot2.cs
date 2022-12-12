@@ -28,7 +28,7 @@ public class ObjectToShoot2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.gameObject.tag=="Player")
+        if(collider.gameObject.tag=="Player"||collider.gameObject.tag=="Ground")
             Destroy(this.gameObject);
     }
 }
