@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class MeleeEnemy : MonoBehaviour
 {
+    [Header ("Attack Parameters")]
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
-    [SerializeField] private float colliderDistance;
     [SerializeField] private int damage;
+
+    [Header ("Collider Parameters")]
+    [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
-    [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
+
+    [Header ("PlayerLayer")]
+    [SerializeField] private LayerMask playerLayer;
+
+    [Header ("Health")]
+    [SerializeField] public int maxHealth;
+    public int currentHealth;
 
     //References
     private Animator anim;
@@ -24,7 +33,11 @@ public class MeleeEnemy : MonoBehaviour
         enemyPatrol = GetComponentInParent<EnemyPatrol>();
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        currentHealth = maxHealth;         
+    }
+
     private void Update()
     {
         cooldownTimer += Time.deltaTime;
@@ -37,11 +50,10 @@ public class MeleeEnemy : MonoBehaviour
             {
                 cooldownTimer = 0;
                 anim.SetTrigger("fighting");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitAndFight());
             }
         } 
-
-        // if (enemyPatrol != null)  
-        // enemyPatrol.enabled = !PlayerInSight();
     }
 
     private bool PlayerInSight()
@@ -50,8 +62,6 @@ public class MeleeEnemy : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
                 0, Vector2.left, 0, playerLayer);
-        if(hit.collider != null)
-            playerHealth = PlayerPrefs.GetInt("currentHealth");
 
         return hit.collider != null;
     }
@@ -63,11 +73,49 @@ public class MeleeEnemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void DamagePlayer()
+    private void OnTriggerEnter2D(Collider2D external)
     {
-        if(PlayerInSight())
+        if(external.gameObject.CompareTag("Player"))
         {
-            playerHealth = playerHealth - damage;
+            PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage); 
+        }
+
+        if(external.gameObject.CompareTag("Weapon"))
+        {
+            currentHealth -= 1;
+            
+            if(currentHealth<=0)
+            {
+                anim.SetTrigger("dead");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitAndDie());
+            }
+            else
+            {
+                anim.SetTrigger("hurt2");
+                GetComponentInParent<EnemyPatrol>().enabled = false;
+                StartCoroutine(WaitWhileHurt());
+            }
+            
         }
     }
+
+    IEnumerator WaitAndFight()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GetComponentInParent<EnemyPatrol>().enabled = true;
+    }
+
+    IEnumerator WaitAndDie()
+    {
+        yield return new WaitForSeconds(1);
+        this.transform.position = new Vector2(0, -1000);
+    }
+
+    IEnumerator WaitWhileHurt()
+    {
+        yield return new WaitForSeconds(1);
+        GetComponentInParent<EnemyPatrol>().enabled = true;
+    }
+
 }
