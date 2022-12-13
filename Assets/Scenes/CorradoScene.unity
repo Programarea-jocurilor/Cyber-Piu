@@ -2644,6 +2644,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1138660680690040959, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175459, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_Name
       value: PlayerCaracter
@@ -2706,6 +2710,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1138660681364175485, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995536947579848787, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: inputTimer
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995536947579848787, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+      propertyPath: whatIsDamageable.m_Bits
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
