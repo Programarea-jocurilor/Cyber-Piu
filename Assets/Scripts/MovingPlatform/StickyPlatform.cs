@@ -9,7 +9,6 @@ public class StickyPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("pleasee");
             collision.gameObject.transform.SetParent(transform);
         }
     }

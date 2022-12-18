@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerCombatController : MonoBehaviour
 {
+    public Animator attack;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,9 @@ public class PlayerCombatController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetMouseButtonDown(0)) 
+        {
+            attack.SetTrigger("onAttack");
+        }   
     }
 }
