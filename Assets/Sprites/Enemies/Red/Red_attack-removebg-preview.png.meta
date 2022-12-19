@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c646bd2dd87ca3e419295530d592352e
+guid: 225bb56e7de37364787f2abb726c7d28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_0
+      name: Red_attack-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 43
-        width: 127
-        height: 132
+        x: 61
+        y: 167
+        width: 8
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe3a47cf73e4ad428e49f4ebd55b4fa
-      internalID: 83386275
+      spriteID: 6d1fa3a6f4c6ac84f938dc7e05d21762
+      internalID: 594205706
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_1
+      name: Red_attack-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 253
-        y: 43
-        width: 131
-        height: 132
+        x: 62
+        y: 24
+        width: 143
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f1323bce9f9d914ebfae4b584043c74
-      internalID: 80613997
+      spriteID: fb67f30aaff995f4e9a643a4751a5d21
+      internalID: -597106184
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_2
+      name: Red_attack-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 440
-        y: 43
-        width: 129
-        height: 132
+        x: 249
+        y: 171
+        width: 5
+        height: 5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f072fb6e2cbdd14fb4325a7aad9074a
-      internalID: -1080719927
+      spriteID: fb5e18cbd0bd14c4a86ce90b1b754e39
+      internalID: -812912371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_3
+      name: Red_attack-removebg-preview_3
       rect:
         serializedVersion: 2
-        x: 628
-        y: 44
-        width: 127
-        height: 129
+        x: 251
+        y: 24
+        width: 144
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af0a2c8b7ebac48b283972c5148c62
-      internalID: 1077085109
+      spriteID: a88fc7160ad5e844596319ba9f58cef0
+      internalID: 1632265882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_4
+      name: Red_attack-removebg-preview_4
       rect:
         serializedVersion: 2
-        x: 812
-        y: 44
-        width: 157
-        height: 129
+        x: 438
+        y: 24
+        width: 148
+        height: 159
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14aab9e179482a240912686e545154f7
-      internalID: 27927135
+      spriteID: dd0eee8b21c60654fb158ed775f83173
+      internalID: -187224569
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_5
+      name: Red_attack-removebg-preview_5
       rect:
         serializedVersion: 2
-        x: 996
-        y: 44
-        width: 150
-        height: 129
+        x: 625
+        y: 24
+        width: 144
+        height: 160
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f6fe27c02e90a842ace0332e1eddd0d
-      internalID: -510837076
+      spriteID: 34f8e0eee12df9840812a7049714f59d
+      internalID: 1133789080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_attack-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 24
+        width: 177
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b8e38b364f8f64ca1eab831df72f9e
+      internalID: 1377456546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red_attack-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 24
+        width: 164
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5a52a58d42a0e4abe5953442148820
+      internalID: -1297256402
       vertices: []
       indices: 
       edges: []
@@ -253,12 +295,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blue_enemy2_attack-removebg-preview_5: -510837076
-      Blue_enemy2_attack-removebg-preview_3: 1077085109
-      Blue_enemy2_attack-removebg-preview_4: 27927135
-      Blue_enemy2_attack-removebg-preview_2: -1080719927
-      Blue_enemy2_attack-removebg-preview_1: 80613997
-      Blue_enemy2_attack-removebg-preview_0: 83386275
+      Red_attack-removebg-preview_6: 1377456546
+      Red_attack-removebg-preview_2: -812912371
+      Red_attack-removebg-preview_0: 594205706
+      Red_attack-removebg-preview_4: -187224569
+      Red_attack-removebg-preview_3: 1632265882
+      Red_attack-removebg-preview_5: 1133789080
+      Red_attack-removebg-preview_1: -597106184
+      Red_attack-removebg-preview_7: -1297256402
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

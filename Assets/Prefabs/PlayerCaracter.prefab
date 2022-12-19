@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1138660680690040955}
   - component: {fileID: 1138660680690040953}
   - component: {fileID: 1138660680690040948}
-  m_Layer: 0
+  - component: {fileID: 316819629}
+  m_Layer: 6
   m_Name: Weapon
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -27,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1138660680690040959}
   m_LocalRotation: {x: -0, y: -0, z: 0.2877032, w: 0.9577197}
-  m_LocalPosition: {x: 0.441, y: 0.28, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.02, z: 0.5}
+  m_LocalPosition: {x: 0.8227, y: 0.5065, z: 0}
+  m_LocalScale: {x: 0.28012994, y: 0.049588446, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1138660681364175485}
@@ -74,13 +75,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.09500711, g: 0.5754717, b: 0.4920806, a: 0}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 21300000, guid: 382afbf21c18c1b448b500dae7c9d0ec, type: 3}
+  m_Color: {r: 0.8679245, g: 0.10153075, b: 0.10153075, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.61, y: 3.77}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -122,6 +123,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &316819629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138660680690040959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52f780304f1cf414183afb627800a160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1138660681364175459
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +150,8 @@ GameObject:
   - component: {fileID: 1138660681364175480}
   - component: {fileID: 2995536947579848787}
   - component: {fileID: 334735931}
+  - component: {fileID: 1610098827}
+  - component: {fileID: 1610098834}
   m_Layer: 6
   m_Name: PlayerCaracter
   m_TagString: Player
@@ -200,9 +215,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1933094141
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -565875503, guid: 4a1b8d35be7a7da47aeaf2adc83981fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -230,7 +245,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 4
-  m_Material: {fileID: 6200000, guid: a7068b35d2c708b439aea18678d2618e, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -300,7 +315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02ccbad3a2ed78e40afbeec317c5cb62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 0}
+  attack: {fileID: 1138660680690040948}
 --- !u!95 &334735931
 Animator:
   serializedVersion: 4
@@ -321,6 +336,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1610098827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138660681364175459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71d8b2eefe513a47a778a36d7dc0620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 3
+--- !u!114 &1610098834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138660681364175459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb7c9ebe282264081815750d993718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallDetector: {fileID: 0}
 --- !u!1 &1138660681567203597
 GameObject:
   m_ObjectHideFlags: 0

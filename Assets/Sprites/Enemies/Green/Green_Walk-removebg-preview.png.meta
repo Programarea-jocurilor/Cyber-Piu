@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c646bd2dd87ca3e419295530d592352e
+guid: ca7bc02f47d29114fbd08bd6d09da56a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 0
+  spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 128
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_0
+      name: Green_Walk-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 43
-        width: 127
-        height: 132
+        x: 50
+        y: 6
+        width: 162
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe3a47cf73e4ad428e49f4ebd55b4fa
-      internalID: 83386275
+      spriteID: d427d14b794923749847451e6e0d48f8
+      internalID: -427994427
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_1
+      name: Green_Walk-removebg-preview_1
       rect:
         serializedVersion: 2
-        x: 253
-        y: 43
-        width: 131
-        height: 132
+        x: 252
+        y: 7
+        width: 162
+        height: 182
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,20 +152,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f1323bce9f9d914ebfae4b584043c74
-      internalID: 80613997
+      spriteID: 12cc3bb5008bc17428ff49479fbdfe71
+      internalID: 669469878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_2
+      name: Green_Walk-removebg-preview_2
       rect:
         serializedVersion: 2
-        x: 440
-        y: 43
-        width: 129
-        height: 132
+        x: 455
+        y: 6
+        width: 161
+        height: 185
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,20 +173,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f072fb6e2cbdd14fb4325a7aad9074a
-      internalID: -1080719927
+      spriteID: e9030d51c10ba8a4e883241d5e2d3002
+      internalID: -901451575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_3
+      name: Green_Walk-removebg-preview_3
       rect:
         serializedVersion: 2
-        x: 628
-        y: 44
-        width: 127
-        height: 129
+        x: 656
+        y: 6
+        width: 162
+        height: 177
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,20 +194,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53af0a2c8b7ebac48b283972c5148c62
-      internalID: 1077085109
+      spriteID: 64fc71f895aab154698e80047a5942ea
+      internalID: -1437998082
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_4
+      name: Green_Walk-removebg-preview_4
       rect:
         serializedVersion: 2
-        x: 812
-        y: 44
-        width: 157
-        height: 129
+        x: 858
+        y: 6
+        width: 162
+        height: 183
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,20 +215,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14aab9e179482a240912686e545154f7
-      internalID: 27927135
+      spriteID: a33ef6959a1cb9944b3d3889b84b3b69
+      internalID: -95098204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blue_enemy2_attack-removebg-preview_5
+      name: Green_Walk-removebg-preview_5
       rect:
         serializedVersion: 2
-        x: 996
-        y: 44
-        width: 150
-        height: 129
+        x: 1060
+        y: 6
+        width: 162
+        height: 186
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,8 +236,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f6fe27c02e90a842ace0332e1eddd0d
-      internalID: -510837076
+      spriteID: 311fb4ab7c4ccae4284f5f10aaa3f6da
+      internalID: 945655904
       vertices: []
       indices: 
       edges: []
@@ -253,12 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Blue_enemy2_attack-removebg-preview_5: -510837076
-      Blue_enemy2_attack-removebg-preview_3: 1077085109
-      Blue_enemy2_attack-removebg-preview_4: 27927135
-      Blue_enemy2_attack-removebg-preview_2: -1080719927
-      Blue_enemy2_attack-removebg-preview_1: 80613997
-      Blue_enemy2_attack-removebg-preview_0: 83386275
+      Green_Walk-removebg-preview_3: -1437998082
+      Green_Walk-removebg-preview_5: 945655904
+      Green_Walk-removebg-preview_4: -95098204
+      Green_Walk-removebg-preview_2: -901451575
+      Green_Walk-removebg-preview_1: 669469878
+      Green_Walk-removebg-preview_0: -427994427
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
