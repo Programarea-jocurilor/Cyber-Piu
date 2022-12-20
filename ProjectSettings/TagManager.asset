@@ -9,7 +9,8 @@ TagManager:
   - MarginLeft
   - Spike
   - MarginRight
-  - PatrollingEnemy
+  - FallDetector
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
@@ -50,9 +51,18 @@ TagManager:
   - name: Background
     uniqueID: 3013695741
     locked: 0
+  - name: Traps
+    uniqueID: 3690195743
+    locked: 0
+  - name: Ground
+    uniqueID: 1398737307
+    locked: 0
   - name: Enemy
     uniqueID: 4015592685
     locked: 0
   - name: Player
     uniqueID: 1933094141
+    locked: 0
+  - name: Forground
+    uniqueID: 3405137641
     locked: 0
