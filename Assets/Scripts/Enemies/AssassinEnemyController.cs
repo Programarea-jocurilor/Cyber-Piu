@@ -94,6 +94,7 @@ public class AssassinEnemyController : MonoBehaviour
         if(!groundDetected || wallDetected)
         {
             Flip();
+            wallCheckDistance *= -1;
         }
         else
         {
