@@ -8,8 +8,9 @@ public class WaypointFollower : MonoBehaviour
     private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 2f;
-
+    [SerializeField] private float seconds;
     private Animator anim;
+    private bool startMovement=false;
 
     void Start()
     {
@@ -17,6 +18,13 @@ public class WaypointFollower : MonoBehaviour
     }
 
     private void Update()
+    {
+        StartCoroutine(WaitAndMove());
+        if (startMovement == true)
+            Move();
+    }
+
+    private void Move()
     {
         if (Vector2.Distance(waypoints[currentWaypointIndex].transform.position, transform.position) < .1f)
         {
@@ -29,5 +37,11 @@ public class WaypointFollower : MonoBehaviour
             }
         }
         transform.position = Vector2.MoveTowards(transform.position, waypoints[currentWaypointIndex].transform.position, Time.deltaTime * speed);
+    }
+
+    IEnumerator WaitAndMove()
+    {
+        yield return new WaitForSeconds(seconds);
+        startMovement = true;
     }
 }
