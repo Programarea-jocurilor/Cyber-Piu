@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3285942011392930431}
   m_Layer: 8
-  m_Name: GroundCheck
+  m_Name: LedgeCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71,9 +71,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3285942012284661516}
-  - component: {fileID: 3285942012284661515}
+  - component: {fileID: 7307255118163047469}
   m_Layer: 0
-  m_Name: Assassin
+  m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3285942012284661515
+--- !u!114 &7307255118163047469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -104,31 +104,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 3285942012284661517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc480fcb49335e42b146a8299e6b6b7, type: 3}
+  m_Script: {fileID: 11500000, guid: 375110200eb497f4f950bd3a5ede97fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundCheckDistance: 1.1
-  wallCheckDistance: 0.1
-  movementSpeed: 4
-  maxHealth: 2
-  knockbackDuration: 0.2
-  lastTouchDamageTime: 0
-  touchDamageCooldown: 0.2
-  touchDamage: 1
-  touchDamageWidth: 0.5
-  touchDamageHeight: 1.8
-  groundCheck: {fileID: 3285942011392930431}
+  entityData: {fileID: 11400000, guid: 328036b34ca43b8489017d07063354f5, type: 2}
   wallCheck: {fileID: 3285942013168112107}
-  touchDamageCheck: {fileID: 3285942011639605423}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 64
-  knockbackSpeed: {x: 0, y: 0}
-  hitParticle: {fileID: 3746797949470833013, guid: 552b3a982a705ab4db5d16a0f005ccd4, type: 3}
-  deathSprite: {fileID: 6294205353957594813, guid: 4a0dcf151d2e5d342813c444801a56ae, type: 3}
+  ledgeCheck: {fileID: 3285942011392930431}
+  idleStateData: {fileID: 11400000, guid: 8b85c44a88594f047ad0c38f772262d1, type: 2}
+  moveStateData: {fileID: 11400000, guid: 498146742ded5a34b8993600c7950311, type: 2}
 --- !u!1 &3285942012365928892
 GameObject:
   m_ObjectHideFlags: 0

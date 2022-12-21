@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Finish : MonoBehaviour
 {
-    private bool levelCompleted = false;
+//    private bool levelCompleted = false;
 
     private void Start()
     {
@@ -16,7 +16,7 @@ public class Finish : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            levelCompleted = true;
+//            levelCompleted = true;
             Invoke("CompleteLevel", 0.5f);
         }
     }
