@@ -1563,6 +1563,37 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b691be34cdb69248b9bbfd402d86459, type: 3}
+--- !u!1 &748291523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 748291524}
+  m_Layer: 8
+  m_Name: MeleeAttackPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &748291524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 748291523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936776711}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &759246724
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2254,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1055641683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1055641684}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1055641684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055641683}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.181, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1936776711}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1187894654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2644,37 +2706,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1480929565
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1480929566}
-  m_Layer: 8
-  m_Name: PlayerCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1480929566
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480929565}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1936776711}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1487126094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,6 +2914,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1556685018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3285942012365928892, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+  m_PrefabInstance: {fileID: 1917997659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1561339559
 GameObject:
   m_ObjectHideFlags: 0
@@ -3815,26 +3851,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy1
       objectReference: {fileID: 0}
-    - target: {fileID: 3285942012365928888, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: a7068b35d2c708b439aea18678d2618e, type: 2}
+    - target: {fileID: 3285942012365928890, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.17708333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3285942012365928890, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.36458334
+      objectReference: {fileID: 0}
     - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
-      propertyPath: playerCheck
+      propertyPath: groundCheck
       value: 
-      objectReference: {fileID: 1480929566}
+      objectReference: {fileID: 1055641684}
     - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
-      propertyPath: playerDetectedData
+      propertyPath: deadStateData
       value: 
-      objectReference: {fileID: 11400000, guid: 58b1e645f0bb3c34182c64fb296af3b7, type: 2}
-    m_RemovedComponents:
-    - {fileID: 3285942012284661515, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      objectReference: {fileID: 11400000, guid: 6102aa1793c79704e9ca2b40de70163f, type: 2}
+    - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: stunStateData
+      value: 
+      objectReference: {fileID: 11400000, guid: 352fee39250454247844e88a2e2ec2ea, type: 2}
+    - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: chargeStateData
+      value: 
+      objectReference: {fileID: 11400000, guid: b97cd64684c92e84596965677b00fd5f, type: 2}
+    - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: meleeAttackPosition
+      value: 
+      objectReference: {fileID: 748291524}
+    - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: meleeAttackStateData
+      value: 
+      objectReference: {fileID: 11400000, guid: 77fffcb2d9e0ebc41a3dc7737a28d9dc, type: 2}
+    - target: {fileID: 7307255118163047469, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
+      propertyPath: lookForPlayerStateData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ec66a29b5051f3489ffcfab1b114b59, type: 2}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
 --- !u!4 &1936776711 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3285942012365928891, guid: d2de3f382c548c04fad2daacff2ffaeb, type: 3}
   m_PrefabInstance: {fileID: 1917997659}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1936776716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1556685018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8387bcf0f3cfc408e33313023c8913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1946480828
 GameObject:
   m_ObjectHideFlags: 0

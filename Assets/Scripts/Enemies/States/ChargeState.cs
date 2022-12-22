@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerDetectedState : State
+public class ChargeState : State
 {
-    protected D_PlayerDetected stateData;
-    protected bool isPlayerInMinAgroRange;
-    protected bool isPlayerInMaxAgroRange;
-    protected bool performLongRangeAction;
-    protected bool performCloseRangeAction;
-    protected bool isDetectingLedge;
-    
+    protected D_ChargeState stateData;
 
-    public PlayerDetectedState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData) : base(etity, stateMachine, animBoolName)
+    protected bool isPlayerInMinAgroRange;
+    protected bool isDetectingLedge;
+    protected bool isDetectingWall;
+    protected bool isChargeTimeOver;
+    protected bool performCloseRangeAction;
+
+    public ChargeState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_ChargeState stateData) : base(etity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
     }
@@ -22,16 +22,18 @@ public class PlayerDetectedState : State
         base.DoChecks();
 
         isPlayerInMinAgroRange = entity.CheckPlayerInMinAgroRange();
-        isPlayerInMaxAgroRange = entity.CheckPlayerInMaxAgroRange();
         isDetectingLedge = entity.CheckLedge();
+        isDetectingWall = entity.CheckWall();
+
         performCloseRangeAction = entity.CheckPlayerInCloseRangeAction();
     }
 
     public override void Enter()
     {
         base.Enter();
-        performLongRangeAction = false;
-        entity.SetVelocity(0f);     
+        entity.SetVelocity(stateData.chargeSpeed);
+
+        isChargeTimeOver = false;
     }
 
     public override void Exit()
@@ -43,14 +45,15 @@ public class PlayerDetectedState : State
     {
         base.LogicUpdate();
 
-        if (Time.time >= startTime + stateData.longRangeActionTime)
+
+        if (Time.time >= startTime + stateData.chargeTime)
         {
-            performLongRangeAction = true;
+            isChargeTimeOver = true;
         }
     }
 
     public override void PhysicsUpdate()
     {
-        base.PhysicsUpdate();         
+        base.PhysicsUpdate();
     }
 }
