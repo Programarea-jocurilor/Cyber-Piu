@@ -17,10 +17,12 @@ public class EnemyHealth : MonoBehaviour
     public Transform targetToFollow;
 
     public Vector3 healthBarOffset;
+
+    private float fillValue;
     void Start()
     {
         currentHealth=maxHealth;
-        float fillValue=(float)currentHealth/maxHealth;
+        fillValue=(float)currentHealth/maxHealth;
         slider.value=fillValue;
     }
     // Update is called once per frame
@@ -34,17 +36,33 @@ public class EnemyHealth : MonoBehaviour
         {
             fillImage.enabled=true;
         }
-        float fillValue=(float)currentHealth/maxHealth;
+        fillValue=(float)currentHealth/maxHealth;
         slider.value=fillValue;
 
-        if(Camera.main.WorldToScreenPoint(targetToFollow.position).z>0) //daca e in view-ul camerei, ii schimb scale-ul, ca sa se vada, si-l pun deasupra zombieului.
+        if(targetToFollow)
+        {
+            if(Camera.main.WorldToScreenPoint(targetToFollow.position).z>0) //daca e in view-ul camerei, ii schimb scale-ul, ca sa se vada, si-l pun deasupra zombieului.
             {   
                 slider.transform.position=Camera.main.WorldToScreenPoint(targetToFollow.position+healthBarOffset);//targetToFollow e in World Space, dar healthBarul e in Screen Space si, deci, facem conversie la un punct din Screen Space
             }
-     
+        }
+        if(currentHealth<=0)
+        {
+            if(targetToFollow!=null)
+                {
+                Destroy(targetToFollow.gameObject);
+                Destroy(this.gameObject);
+                }
+        }
+         if(Input.GetKeyDown(KeyCode.F))
+        {
+            currentHealth-=1;
+            fillValue=(float)currentHealth/maxHealth;
+            slider.value=fillValue;
+        }
     }
 
-    void TakeDamage(int amount)
+    public void TakeDamage(int amount)
     {
         if(currentHealth>0)
             currentHealth-=amount;

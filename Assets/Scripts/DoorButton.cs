@@ -6,7 +6,7 @@ public class DoorButton : MonoBehaviour
 {
     [SerializeField] private GameObject doorGameObject;
     private DoorActivate door;
-    private float timer;
+    private float timer=0;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class DoorButton : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Box")
         {
             //player enterd collider
             
@@ -35,7 +35,7 @@ public class DoorButton : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collider)
     {
-        if (collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Box")
         {
             //player still on top of collider
             timer =1f;
