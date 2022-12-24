@@ -432,43 +432,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: move
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: playerDetected
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: charge
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: lookForPlayer
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: meleeAttack
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: stun
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -527,13 +527,13 @@ AnimatorStateMachine:
     m_Position: {x: 340, y: -70, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5560440875254004391}
-    m_Position: {x: 250, y: 390, z: 0}
+    m_Position: {x: 810, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2794499882386717050}
-    m_Position: {x: 380, y: 470, z: 0}
+    m_Position: {x: 540, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7927631866031467688}
-    m_Position: {x: 720, y: 60, z: 0}
+    m_Position: {x: 730, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4666943455306007494}
     m_Position: {x: 1040, y: 210, z: 0}
@@ -548,7 +548,7 @@ AnimatorStateMachine:
     m_Position: {x: 630, y: -160, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8330507943924423824}
-    m_Position: {x: 830, y: 300, z: 0}
+    m_Position: {x: 1340, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 5146512962881116975}
@@ -557,7 +557,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 370, y: -150, z: 0}
   m_EntryPosition: {x: 110, y: 120, z: 0}
-  m_ExitPosition: {x: 50, y: 40, z: 0}
+  m_ExitPosition: {x: 1350, y: 110, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -617181894916637421}
 --- !u!1101 &2413067764351587981

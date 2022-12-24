@@ -154,12 +154,12 @@ MonoBehaviour:
   airDragMultiplier: 0.95
   variableJumpHeightMultiplier: 0.5
   wallHopForce: 10
-  wallJumpForce: 20
+  wallJumpForce: 15
   jumpTimerSet: 0.15
   turnTimerSet: 0.1
   wallJumpTimerSet: 1
-  dashTime: 0.18
-  dashSpeed: 40
+  dashTime: 0.15
+  dashSpeed: 30
   distanceBetweenImages: 0.1
   dashCoolDown: 0.5
   wallHopDirection: {x: 1, y: 0.5}
@@ -185,6 +185,7 @@ MonoBehaviour:
   inputTimer: 0.25
   attack1Radius: 0.6
   attack1Damage: 1
+  stunDamageAmount: 1
   attack1HitBoxPos: {fileID: 6396423794201282490}
   whatIsDamageable:
     serializedVersion: 2
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef92f85feb9c0cd4a93d7f78f78f1436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 3
 --- !u!95 &334735931
 Animator:
   serializedVersion: 4

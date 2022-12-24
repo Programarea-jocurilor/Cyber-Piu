@@ -7,7 +7,7 @@ public class State
     protected FiniteStateMachine stateMachine;
     protected Entity entity;  
 
-    public float startTime; 
+    public float startTime {get; protected set;} 
 
     protected string animBoolName;
 
