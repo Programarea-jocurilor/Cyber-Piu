@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2021_3_11;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;USE_SEARCH_EXTENSION_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2021_3_11;UNITY_2021_3;UNITY_2021;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;USE_SEARCH_ENGINE_API;USE_SEARCH_TABLE;USE_SEARCH_MODULE;USE_PROPERTY_DATABASE;USE_SEARCH_EXTENSION_API;SCENE_TEMPLATE_MODULE;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;NET_STANDARD;NET_STANDARD_2_1;NETSTANDARD;NETSTANDARD2_1;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -36,68 +36,98 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\PlayerCharacter\Enemy.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\Enemy.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\LegacyPlayerControllerV2.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_LookForPlayer.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_RangedAttackState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_DodgeState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_DeadState.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\MoveState.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\CameraController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Input\PlayerInputHandler.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_MeleeAttackState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\CameraController.cs" />
      <Compile Include="Assets\Scripts\Enemies\State Machine\FiniteStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_PlayerDetectedState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\AttackState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\StunState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\Enemy2.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\SpikeMovement.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\EnemyHealth.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SuperStates\PlayerGroundedState.cs" />
      <Compile Include="Assets\Scripts\Map\OneWayPlatform.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\Enemy1.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MoveState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MeleeAttackState.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\Data\D_PlayerDetected.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerAfterImagePool.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\PlayerAfterImagePool.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Data\PlayerData.cs" />
      <Compile Include="Assets\Scripts\Enemies\CombatDummyController.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_DodgeState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerFiniteStateMachine\PlayerState.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\WallJumping.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_DeadState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\MeleeAttackState.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\ObjectToShoot.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\PlayerCollisionDetection.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerMoveState.cs" />
+     <Compile Include="Assets\Scripts\AnimationToStatemachine.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_MoveState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerJumpState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerFiniteStateMachine\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\WeaponRotate.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerCombatController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\PlayerCombatController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_LookForPlayerState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\DodgeState.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\ParticleController.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_LookForPlayerState.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_IdleState.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\EnemyThatShootsAtCertainFireRangeShoot.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\Data\D_MoveState.cs" />
      <Compile Include="Assets\Scripts\PatrollingEnemy\MeleeEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\ChargeState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_MeleeAttack.cs" />
      <Compile Include="Assets\Scripts\Enemies\State Machine\State.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerFiniteStateMachine\PlayerStateMachine.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_ChargeState.cs" />
      <Compile Include="Assets\Scripts\PatrollingEnemy\EnemyPatrol.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStats.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\RangedAttackState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_StunState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\PlayerStats.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\DeadState.cs" />
      <Compile Include="Assets\Scripts\Enemies\State Machine\Entity.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\Init.cs" />
-     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerAfterImageSprite.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerIdleState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\Init.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\Old\PlayerAfterImageSprite.cs" />
      <Compile Include="Assets\Scripts\Map\Finish.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\Shoot.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\LookForPlayerState.cs" />
      <Compile Include="Assets\Scripts\Map\horizontal_moving_platform.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_IdleState.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\Data\D_Entity.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\ObjectToShoot2.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_StunState.cs" />
      <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerLandState.cs" />
+     <Compile Include="Assets\Scripts\Projectiles\Projectile.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\Data\D_IdleState.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\IdleState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_RangedAttackState.cs" />
      <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_PlayerDetectedState.cs" />
+     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy2\E2_DeadState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SuperStates\PlayerAbilityState.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\testing.cs" />
+     <Compile Include="Assets\Scripts\Enemies\States\Data\D_StunState.cs" />
      <Compile Include="Assets\Scripts\Enemies\AssassinEnemyController.cs" />
      <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\LegacyPlayerController.cs" />
      <Compile Include="Assets\Scripts\Enemies\States\PlayerDetectedState.cs" />
      <Compile Include="Assets\Scripts\Enemies\Trash\DroneMovement.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\ChargeState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\Data\D_ChargeState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_ChargeState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\LookForPlayerState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\Data\D_LookForPlayer.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_LookForPlayerState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\AttackState.cs" />
-     <Compile Include="Assets\Scripts\AnimationToStatemachine.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\MeleeAttackState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\Data\D_MeleeAttack.cs" />
-     <Compile Include="Assets\Scripts\Structs\AttackDetails.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_MeleeAttackState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\StunState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\Data\D_StunState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_StunState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\DeadState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\States\Data\D_DeadState.cs" />
-     <Compile Include="Assets\Scripts\Enemies\EnemySpecific\Enemy1\E1_DeadState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerInAirState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SuperStates\PlayerTouchingWallState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerWallSlideState.cs" />
+     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerStates\SubStates\PlayerWallJumpState.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Programe\Unity\2021.3.11f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
@@ -728,15 +758,6 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>D:\Programe\Unity\2021.3.11f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Flow.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
     </Reference>
@@ -746,14 +767,62 @@
     <Reference Include="Unity.2D.PixelPerfect">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="PsdPlugin">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Path.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.IK.Runtime">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.Flow.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
@@ -767,47 +836,26 @@
     <Reference Include="Unity.TextMeshPro">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.Path.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Path.Editor.dll</HintPath>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PlasticSCM.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Tilemap.Extras.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Services.Core">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
@@ -818,20 +866,11 @@
     <Reference Include="Unity.Mathematics">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Cinemachine.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -848,17 +887,11 @@
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.2D.Common.Runtime">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Editor">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.SpriteShape.Runtime">
         <HintPath>C:\Users\anate\Cyber-Piu\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
