@@ -5,6 +5,7 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     private Rigidbody2D player;
+    public Health playerHealth;
 
     private Vector3 respawnPoint;
     public GameObject fallDetector;
@@ -28,6 +29,7 @@ public class Respawn : MonoBehaviour
         if(collision.tag == "FallDetector")
         {
             transform.position = respawnPoint;
+            playerHealth.TakeDamage(1);
         }
         else if(collision.tag == "Checkpoint")
         {

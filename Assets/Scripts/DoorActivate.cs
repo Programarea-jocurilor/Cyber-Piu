@@ -7,7 +7,6 @@ public class DoorActivate : MonoBehaviour
     public bool isDoorOpen = false;
     Vector3 doorClosedPos;
     Vector3 doorOpenPos;
-    [SerializeField] float doorStep = 500;
     Animator anim;
 
     void Awake()

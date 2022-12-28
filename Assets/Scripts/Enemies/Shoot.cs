@@ -16,7 +16,15 @@ public class Shoot : MonoBehaviour
     private float timer;
 
     private float distance;
+    
+    private Animator anim;
   
+    void Awake()
+    {
+        if(this.gameObject.tag!="Boss") //pentru ca bossul nu are animatie momentan
+            anim = GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -29,6 +37,7 @@ public class Shoot : MonoBehaviour
             if(timer>2) //daca au trecut 2 secunde
             {
                 timer=0; //resetam timerul
+                anim.SetTrigger("shoot");
                 EnemyShoot();//trage
             }
         }
@@ -40,6 +49,7 @@ public class Shoot : MonoBehaviour
             {
                 timer=0; //resetam timerul
                 EnemyShoot();//trage
+                // anim.SetTrigger("shoot");
             }
         }
     }

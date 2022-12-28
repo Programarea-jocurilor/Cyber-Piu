@@ -19,7 +19,6 @@ public class Score : MonoBehaviour
         if(collider.gameObject.tag=="Player")
         {
             scoreValue = scoreValue + 100;
-            Debug.Log(scoreValue);
             score.text="Score:"+scoreValue.ToString();
             Destroy(this.gameObject);
         }

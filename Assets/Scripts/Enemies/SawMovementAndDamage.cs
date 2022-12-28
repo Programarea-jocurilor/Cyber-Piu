@@ -12,13 +12,15 @@ public class SawMovementAndDamage : MonoBehaviour
 
     private bool moveLeft;
 
+    [SerializeField] private float seconds;
+
     [SerializeField] private float damage;
     // Start is called before the first frame update
     void Start()
     {
         rb=GetComponent<Rigidbody2D>();
         moveLeft=false;
-        moveRight=true;
+        moveRight=false;
     }
 
     // Update is called once per frame
@@ -52,6 +54,7 @@ public class SawMovementAndDamage : MonoBehaviour
                 }
         }
         */
+        StartCoroutine(WaitAndMove());
         if(moveRight)
         {
             rb.velocity=Vector2.right*speed;
@@ -81,5 +84,10 @@ public class SawMovementAndDamage : MonoBehaviour
         {
             collider.GetComponent<Health>().TakeDamage(damage);
         }
+    }
+    IEnumerator WaitAndMove()
+    {
+        yield return new WaitForSeconds(seconds);
+        moveRight = true;
     }
 }
