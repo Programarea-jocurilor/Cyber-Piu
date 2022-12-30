@@ -26,3 +26,14 @@ MonoBehaviour:
   coyoteTime: 0.08
   variableJumpHeightMultiplier: 0.4
   wallSlideVelocity: 2
+  dashCooldown: 0.5
+  maxHoldTime: 2
+  holdTimeScale: 0.2
+  dashTime: 0.15
+  dashVelocity: 30
+  drag: 10
+  dashEndYMultiplier: 0.2
+  distBetweenAfterImages: 0.5
+  dodgeRollCooldown: 0.5
+  dodgeRollTime: 0.15
+  dodgeRollVelocity: 30

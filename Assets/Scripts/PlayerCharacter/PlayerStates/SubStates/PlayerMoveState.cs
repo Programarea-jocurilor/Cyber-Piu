@@ -31,6 +31,7 @@ public class PlayerMoveState : PlayerGroundedState
 
         // core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
 
+
         // if (!isExitingState)
         // {
         //     if (xInput == 0)
@@ -42,9 +43,9 @@ public class PlayerMoveState : PlayerGroundedState
         //         stateMachine.ChangeState(player.CrouchMoveState);
         //     }
         // }    
-        player.CheckIfShouldFlip(xInput);
+        core.Movement.CheckIfShouldFlip(xInput);
         
-        player.SetVelocityX(playerData.movementVelocity * xInput);
+        core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
 
         if(xInput == 0 && !isExitingState)
         {

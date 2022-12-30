@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerState
 {
-    // protected Core core;
+    protected Core core;
 
     protected Player player;
     protected PlayerStateMachine stateMachine;
@@ -24,7 +24,7 @@ public class PlayerState
         this.stateMachine = stateMachine;
         this.playerData = playerData;
         this.animBoolName = animBoolName;
-        // core = player.Core;
+        core = player.Core;
     }
 
     public virtual void Enter()

@@ -15,7 +15,8 @@ public class PlayerGroundedState : PlayerState
     private bool isGrounded;
     // private bool isTouchingWall;
     // private bool isTouchingLedge;
-    // private bool dashInput;
+    private bool dashInput;
+    private bool dodgeRollInput;
 
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -25,7 +26,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
+        isGrounded = core.CollisionSenses.Ground;
         // isGrounded = core.CollisionSenses.Ground;
         // isTouchingWall = core.CollisionSenses.WallFront;
         // isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
@@ -37,7 +38,7 @@ public class PlayerGroundedState : PlayerState
         base.Enter();
 
         player.JumpState.ResetAmountOfJumpsLeft();
-        // player.DashState.ResetCanDash();
+        player.DashState.ResetCanDash();
     }
 
     public override void Exit()
@@ -53,10 +54,20 @@ public class PlayerGroundedState : PlayerState
         yInput = player.InputHandler.NormInputY;
         JumpInput = player.InputHandler.JumpInput;
         // grabInput = player.InputHandler.GrabInput;
-        // dashInput = player.InputHandler.DashInput;
+        dashInput = player.InputHandler.DashInput;
         input = player.InputHandler.RawMovementInput;
 
-        if(JumpInput && player.JumpState.CanJump())
+        dodgeRollInput = player.InputHandler.DodgeRollInput;
+
+        if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
+        {
+            stateMachine.ChangeState(player.PrimaryAttackState);
+        }
+        else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
+        {
+            stateMachine.ChangeState(player.SecondaryAttackState);
+        }
+        else if(JumpInput && player.JumpState.CanJump())
         {   
             
             stateMachine.ChangeState(player.JumpState);
@@ -67,15 +78,17 @@ public class PlayerGroundedState : PlayerState
             player.InAirState.StartCoyoteTime();
             stateMachine.ChangeState(player.InAirState);
         }
+        else if(dashInput && player.DashState.CheckIfCanDash())
+        {
+            stateMachine.ChangeState(player.DashState);
+        }
+        else if(dodgeRollInput) // && player.DodgeRollState.CheckIfCanDodgeRoll()
+        {
+            stateMachine.ChangeState(player.DodgeRollState);
+        }
 
-        // if (player.InputHandler.AttackInputs[(int)CombatInputs.primary] && !isTouchingCeiling)
-        // {
-        //     stateMachine.ChangeState(player.PrimaryAttackState);
-        // }
-        // else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary] && !isTouchingCeiling)
-        // {
-        //     stateMachine.ChangeState(player.SecondaryAttackState);
-        // }
+
+        
         // else if (JumpInput && player.JumpState.CanJump())
         // {
         //     stateMachine.ChangeState(player.JumpState);

@@ -8,7 +8,8 @@ public class PlayerAfterImageSprite : MonoBehaviour
     private float timeActivated;
     private float alpha;
     private float alphaSet = 0.8f;
-    private float alphaMultiplier = 0.965f;
+    // private float alphaMultiplier = 0.965f;
+    private float alphaMultiplier = 0.97f;
 
     private Transform player;
 
