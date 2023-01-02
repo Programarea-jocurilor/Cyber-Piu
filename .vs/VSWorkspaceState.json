@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Assets",
+    "\\Assets\\Scripts",
+    "\\Assets\\Scripts\\Core",
+    "\\Assets\\Scripts\\Core\\CoreComponents",
+    "\\Assets\\Scripts\\Enemies",
+    "\\Assets\\Scripts\\PlayerCharacter",
+    "\\Assets\\Scripts\\PlayerCharacter\\PlayerStates",
+    "\\Assets\\Scripts\\PlayerCharacter\\PlayerStates\\SubStates",
+    "\\Assets\\Scripts\\PlayerCharacter\\PlayerStates\\SuperStates"
+  ],
+  "SelectedNode": "\\Assets\\Scripts\\Core\\CoreComponents\\CollisionSenses.cs",
+  "PreviewInSolutionExplorer": false
+}
