@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1670586928527919140, guid: 88811ec06288d414086286810ae0aef5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1670586928527919140, guid: 88811ec06288d414086286810ae0aef5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -150,6 +150,10 @@ PrefabInstance:
     - target: {fileID: 1670586928527919141, guid: 88811ec06288d414086286810ae0aef5, type: 3}
       propertyPath: m_Name
       value: MovingPlatform
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670586928527919163, guid: 88811ec06288d414086286810ae0aef5, type: 3}
+      propertyPath: speed
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1670586928527919163, guid: 88811ec06288d414086286810ae0aef5, type: 3}
       propertyPath: waypoints.Array.data[0]

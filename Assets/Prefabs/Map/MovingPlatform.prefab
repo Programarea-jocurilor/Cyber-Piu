@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1398737307
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 41c5fc37c606b3444a143d456e36893f, type: 3}
   m_Color: {r: 0.90199995, g: 0.50512, b: 0.80620134, a: 1}
@@ -104,7 +104,8 @@ MonoBehaviour:
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
-  speed: 3
+  speed: 6
+  seconds: 0
 --- !u!61 &1670586928527919161
 BoxCollider2D:
   m_ObjectHideFlags: 0

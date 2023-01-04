@@ -380,8 +380,9 @@ public class PlayerController : MonoBehaviour
     public Transform wallCheck;
 
     public LayerMask whatIsGround;
-
+    //----------
     public static bool isDrowsy;
+    //----------
     // Start is called before the first frame update
     void Start()
     {
@@ -390,7 +391,9 @@ public class PlayerController : MonoBehaviour
         amountOfJumpsLeft = amountOfJumps;
         wallHopDirection.Normalize();
         wallJumpDirection.Normalize();
+        //----------
         isDrowsy=false;
+        //----------
     }
 
     // Update is called once per frame
@@ -661,10 +664,12 @@ public class PlayerController : MonoBehaviour
         }
         else if(canMove)
         {
+            //----------
             if(!isDrowsy)
                 rb.velocity = new Vector2(movementSpeed * movementInputDirection, rb.velocity.y);
             else
                 rb.velocity = new Vector2(-movementSpeed * movementInputDirection, rb.velocity.y);
+            //----------
         }
         
 
