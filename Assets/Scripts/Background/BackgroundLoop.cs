@@ -9,12 +9,16 @@ public class BackgroundLoop : MonoBehaviour{
     public float choke;
     public float scrollSpeed;
 
+    private Vector3 lastScreenPosition;
+
+
     void Start(){
         mainCamera = gameObject.GetComponent<Camera>();
         screenBounds = mainCamera.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, mainCamera.transform.position.z));
         foreach(GameObject obj in levels){
             loadChildObjects(obj);
         }
+        lastScreenPosition= transform.position;
     }
     void loadChildObjects(GameObject obj){
         float objectWidth = obj.GetComponent<SpriteRenderer>().bounds.size.x - choke;
@@ -55,6 +59,10 @@ public class BackgroundLoop : MonoBehaviour{
     void LateUpdate(){
         foreach(GameObject obj in levels){
             repositionChildObjects(obj);
+            float parallaxSpeed=1-Mathf.Clamp01(Mathf.Abs(transform.position.z/obj.transform.position.z));
+            float difference= transform.position.x-lastScreenPosition.x;
+            obj.transform.Translate(Vector3.right*difference*parallaxSpeed);
         }
+        lastScreenPosition=transform.position;
     }
 }
