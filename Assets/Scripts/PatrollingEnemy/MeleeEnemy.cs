@@ -12,20 +12,21 @@ public class MeleeEnemy : MonoBehaviour
     [Header ("Collider Parameters")]
     [SerializeField] private float colliderDistance;
     [SerializeField] private BoxCollider2D boxCollider;
-    private float cooldownTimer = Mathf.Infinity;
 
     [Header ("PlayerLayer")]
     [SerializeField] private LayerMask playerLayer;
+    private float cooldownTimer = Mathf.Infinity;
 
-    [Header ("Health")]
-    [SerializeField] public int maxHealth;
-    public int currentHealth;
+    // [Header ("Health")]
+    // [SerializeField] public int maxHealth;
+    // public int currentHealth;
 
     //References
     private Animator anim;
-    private int playerHealth;
+    private Health playerHealth;
     private EnemyPatrol enemyPatrol;
 
+    bool inSight = false;
 
     private void Awake()
     {
@@ -35,7 +36,7 @@ public class MeleeEnemy : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;         
+        // currentHealth = maxHealth;         
     }
 
     private void Update()
@@ -58,12 +59,21 @@ public class MeleeEnemy : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        
+        inSight = false;
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
                 0, Vector2.left, 0, playerLayer);
 
-        return hit.collider != null;
+
+        if(hit.collider != null)
+        if (hit.collider.gameObject.tag == "Player")
+        {
+            playerHealth = hit.transform.GetComponent<Health>();
+            inSight = true;
+        }
+        
+        // return hit.collider != null;
+        return inSight;
     }
     
     private void OnDrawGizmos()
@@ -73,32 +83,32 @@ public class MeleeEnemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    private void OnTriggerEnter2D(Collider2D external)
-    {
-        if(external.gameObject.CompareTag("Player"))
-        {
-            PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage); 
-        }
+    // private void OnTriggerEnter2D(Collider2D external)
+    // {
+    //     if(external.gameObject.CompareTag("Player"))
+    //     {
+    //         PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage); 
+    //     }
 
-        if(external.gameObject.CompareTag("Weapon"))
-        {
-            currentHealth -= 1;
+    //     if(external.gameObject.CompareTag("Weapon"))
+    //     {
+    //         currentHealth -= 1;
             
-            if(currentHealth<=0)
-            {
-                anim.SetTrigger("dead");
-                GetComponentInParent<EnemyPatrol>().enabled = false;
-                StartCoroutine(WaitAndDie());
-            }
-            else
-            {
-                anim.SetTrigger("hurt2");
-                GetComponentInParent<EnemyPatrol>().enabled = false;
-                StartCoroutine(WaitWhileHurt());
-            }
+    //         if(currentHealth<=0)
+    //         {
+    //             anim.SetTrigger("dead");
+    //             GetComponentInParent<EnemyPatrol>().enabled = false;
+    //             StartCoroutine(WaitAndDie());
+    //         }
+    //         else
+    //         {
+    //             anim.SetTrigger("hurt2");
+    //             GetComponentInParent<EnemyPatrol>().enabled = false;
+    //             StartCoroutine(WaitWhileHurt());
+    //         }
             
-        }
-    }
+    //     }
+    // }
 
     IEnumerator WaitAndFight()
     {
@@ -116,6 +126,12 @@ public class MeleeEnemy : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         GetComponentInParent<EnemyPatrol>().enabled = true;
+    }
+
+    private void DamagePlayer()
+    {
+        if (PlayerInSight())
+            playerHealth.TakeDamage(damage);
     }
 
 }

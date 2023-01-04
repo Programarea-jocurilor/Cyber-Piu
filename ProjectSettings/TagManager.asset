@@ -6,6 +6,19 @@ TagManager:
   tags:
   - Enemy
   - Weapon
+  - MarginLeft
+  - Spike
+  - MarginRight
+  - FallDetector
+  - Checkpoint
+  - DrowsyPotion
+  - HealthPotion
+  - InvincibilityPotion
+  - CantAttackPotion
+  - ChickenLeg
+  - Boss
+  - BossEgg
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -15,8 +28,8 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
-  - 
+  - Damageable
+  - Dead
   - 
   - 
   - 
@@ -40,15 +53,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
   - name: Background
     uniqueID: 3013695741
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: Traps
+    uniqueID: 3690195743
+    locked: 0
+  - name: Ground
+    uniqueID: 1398737307
     locked: 0
   - name: Enemy
     uniqueID: 4015592685
     locked: 0
   - name: Player
     uniqueID: 1933094141
+    locked: 0
+  - name: Forground
+    uniqueID: 3405137641
     locked: 0
