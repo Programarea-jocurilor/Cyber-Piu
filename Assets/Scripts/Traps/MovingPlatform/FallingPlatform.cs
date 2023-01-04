@@ -25,7 +25,8 @@ public class FallingPlatform : MonoBehaviour
 
     void OnCollisionEnter2D( Collision2D collider)
     {
-        if (collider.gameObject.name == "PlayerCaracter")
+        //if (collider.gameObject.name == "PlayerCaracter")
+        if (collider.gameObject.name == "PlayerNewV")
         {
             Invoke ("DropPlatform", 0.5f);
             // Destroy (gameObject, 2f);
