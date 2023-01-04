@@ -34,7 +34,11 @@ public class Core : MonoBehaviour
 
         if(comp == null)
         {
-            Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
+            comp = GetComponentInChildren<T>();
+            if(comp == null)
+            {
+                Debug.LogWarning($"{typeof(T)} not found on {transform.parent.name}");
+            }
         }
 
         return comp;
