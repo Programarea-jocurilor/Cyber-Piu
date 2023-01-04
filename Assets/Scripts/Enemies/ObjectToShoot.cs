@@ -43,9 +43,9 @@ public class ObjectToShoot : MonoBehaviour
             {
                 if(collider.gameObject.tag!="Player")
                 {
-                GameObject friedEggClone=Instantiate(friedEgg,this.transform.position,Quaternion.identity);
-                friedEggClone.SetActive(true);
-                Destroy(friedEggClone,2f);
+                    GameObject friedEggClone=Instantiate(friedEgg,this.transform.position,Quaternion.identity);
+                    friedEggClone.SetActive(true);
+                    Destroy(friedEggClone,2f);
                 }
                 Destroy(this.gameObject);
             }

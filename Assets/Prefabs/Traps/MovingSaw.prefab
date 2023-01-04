@@ -104,8 +104,9 @@ GameObject:
   - component: {fileID: 3252837475973495352}
   - component: {fileID: 3252837475973495355}
   - component: {fileID: 3252837475973495358}
-  - component: {fileID: 3252837475973495357}
   - component: {fileID: 3252837475973495330}
+  - component: {fileID: 8056503005586596562}
+  - component: {fileID: 9025417429434388997}
   m_Layer: 6
   m_Name: SawObject
   m_TagString: Spike
@@ -193,7 +194,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.027570724, y: -0.37551308}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -204,8 +205,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8828125, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 0.69262314, y: 0.24897385}
+  m_EdgeRadius: 0.73
 --- !u!50 &3252837475973495358
 Rigidbody2D:
   serializedVersion: 4
@@ -227,20 +228,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3252837475973495357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3252837475973495354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 782b99cf524d23a4684f7be11e76ae56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 9
-  damage: 1
 --- !u!95 &3252837475973495330
 Animator:
   serializedVersion: 4
@@ -261,6 +248,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8056503005586596562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252837475973495354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4a08eb442dd0742852dccc9de908e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 3252837475351122187}
+  - {fileID: 3252837476801677454}
+  speed: 10
+  seconds: 0
+--- !u!114 &9025417429434388997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3252837475973495354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0117fac4cb27f614c9c32b107f7ceffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1 &3252837476801677454
 GameObject:
   m_ObjectHideFlags: 0
