@@ -26,6 +26,7 @@ public class MeleeEnemy : MonoBehaviour
     private Health playerHealth;
     private EnemyPatrol enemyPatrol;
 
+    bool inSight = false;
 
     private void Awake()
     {
@@ -58,15 +59,21 @@ public class MeleeEnemy : MonoBehaviour
 
     private bool PlayerInSight()
     {
-        
+        inSight = false;
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.right * range * (-transform.localScale.x) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z),
                 0, Vector2.left, 0, playerLayer);
 
-        if (hit.collider != null)
-            playerHealth = hit.transform.GetComponent<Health>();
 
-        return hit.collider != null;
+        if(hit.collider != null)
+        if (hit.collider.gameObject.tag == "Player")
+        {
+            playerHealth = hit.transform.GetComponent<Health>();
+            inSight = true;
+        }
+        
+        // return hit.collider != null;
+        return inSight;
     }
     
     private void OnDrawGizmos()

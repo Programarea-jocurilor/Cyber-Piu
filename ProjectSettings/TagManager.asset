@@ -11,6 +11,14 @@ TagManager:
   - MarginRight
   - FallDetector
   - Checkpoint
+  - DrowsyPotion
+  - HealthPotion
+  - InvincibilityPotion
+  - CantAttackPotion
+  - ChickenLeg
+  - Boss
+  - BossEgg
+  - Box
   layers:
   - Default
   - TransparentFX

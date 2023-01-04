@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3054070323071957535}
   m_Layer: 6
-  m_Name: ObjectToShootPosition
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3054070323071957534}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.65, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 3054070323475196314}
   - component: {fileID: 290715330}
   - component: {fileID: 290715325}
+  - component: {fileID: 703677367}
   m_Layer: 6
   m_Name: EnemyThatShootsWhenPlayerIsCloseToHim
   m_TagString: Enemy
@@ -108,7 +109,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -279374611
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -582322249, guid: 81d7d771d8157224098bb40b3f29bf19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -136,6 +137,8 @@ MonoBehaviour:
   objectToShoot: {fileID: 1297220184723441415}
   objectToShootTransform: {fileID: 3054070323071957535}
   playerTransform: {fileID: 0}
+  firePoint: {fileID: 3054070323071957535}
+  range: 0.1
 --- !u!61 &3054070323475196314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -195,6 +198,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+--- !u!114 &703677367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3054070323475196317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bffad062ec11024fa99d0101421cabc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  speed: 5
+  rotationModifier: 0
 --- !u!1001 &6448035614446358879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_SortingLayer
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_SortingLayerID
@@ -303,21 +321,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3054070323331111137
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1297220184723441415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 149701aa0f29db240af4aa80e83b03ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 0
-  currentHealth: 0
-  damage: 1
 --- !u!114 &3054070323331111141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,6 +334,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerHealthScript: {fileID: 0}
+  damageValue: 1
+  friedEgg: {fileID: 0}
+  speed: 0
 --- !u!4 &6812197297544094900 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 573592551967782379, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}

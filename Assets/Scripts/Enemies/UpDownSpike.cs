@@ -26,7 +26,7 @@ public class UpDownSpike : MonoBehaviour
         
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center + transform.up * range * (transform.localScale.y) * colliderDistance, 
                 new Vector3(boxCollider.bounds.size.x, boxCollider.bounds.size.y * range, boxCollider.bounds.size.z),
-                0, Vector2.left, 0, playerLayer);
+                0, Vector2.down, 0, playerLayer);
 
         if (hit.collider != null)
             playerHealth = hit.transform.GetComponent<Health>();

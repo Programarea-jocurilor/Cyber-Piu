@@ -6,13 +6,16 @@ public class ObjectToShoot2 : MonoBehaviour
 {
     public GameObject player;
 
+    public Health playerHealthScript;
+
+    public float damageValue;
     private Rigidbody2D rb;
 
     private float speed;
     // Start is called before the first frame update
     void Start()
     {
-        speed=Random.Range(3,7); //ASTA VA DA DMG de cat vrem * speed
+        speed=Random.Range(3,5); //ASTA VA DA DMG de cat vrem * speed
         rb=GetComponent<Rigidbody2D>();
         Vector3 direction=player.transform.position-transform.position; //directia in care o sa o ia objectToShoot
         rb.velocity=new Vector2(direction.x,direction.y) * speed;
@@ -20,15 +23,13 @@ public class ObjectToShoot2 : MonoBehaviour
         transform.rotation=Quaternion.Euler(0,0,objectToShootRotation+90); //orientam efectiv varful a ceea ce trage spre player
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag=="Player")
+    {
+        playerHealthScript.TakeDamage(damageValue);
+    }
+        if(collider.gameObject.tag!="Weapon")
             Destroy(this.gameObject);
     }
 }
