@@ -6,9 +6,7 @@ public class PlayerTouchingWallState : PlayerState
 {
     protected bool isGrounded;
     protected bool isTouchingWall;
-    // protected bool grabInput;
     protected bool jumpInput;
-    // protected bool isTouchingLedge;
     protected int xInput;
     protected int yInput;
 
@@ -32,15 +30,6 @@ public class PlayerTouchingWallState : PlayerState
 
         isGrounded = core.CollisionSenses.Ground;
         isTouchingWall = core.CollisionSenses.WallFront;
-
-        // isGrounded = core.CollisionSenses.Ground;
-        // isTouchingWall = core.CollisionSenses.WallFront;
-        // isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
-
-        // if(isTouchingWall && !isTouchingLedge)
-        // {
-        //     player.LedgeClimbState.SetDetectedPosition(player.transform.position);
-        // }
     }
 
     public override void Enter()
@@ -59,7 +48,6 @@ public class PlayerTouchingWallState : PlayerState
 
         xInput = player.InputHandler.NormInputX;
         yInput = player.InputHandler.NormInputY;
-        // grabInput = player.InputHandler.GrabInput;
         jumpInput = player.InputHandler.JumpInput;
 
         if(jumpInput)
@@ -76,24 +64,6 @@ public class PlayerTouchingWallState : PlayerState
         {
             stateMachine.ChangeState(player.InAirState);
         }
-
-        // if (jumpInput)
-        // {            
-        //     player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
-        //     stateMachine.ChangeState(player.WallJumpState);
-        // }
-        // else if (isGrounded && !grabInput)
-        // {
-        //     stateMachine.ChangeState(player.IdleState);
-        // }
-        // else if(!isTouchingWall || (xInput != core.Movement.FacingDirection && !grabInput))
-        // {
-        //     stateMachine.ChangeState(player.InAirState);
-        // }
-        // else if(isTouchingWall && !isTouchingLedge)
-        // {
-        //     stateMachine.ChangeState(player.LedgeClimbState);
-        // }
     }
 
     public override void PhysicsUpdate()

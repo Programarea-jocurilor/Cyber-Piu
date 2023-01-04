@@ -10,12 +10,14 @@ public class State
     public float startTime {get; protected set;} 
 
     protected string animBoolName;
+    protected Core core;   
 
     public State(Entity etity, FiniteStateMachine stateMachine, string animBoolName)
     {
         this.entity = etity;
         this.stateMachine = stateMachine;
         this.animBoolName = animBoolName;
+        core = entity.Core;
     }
 
     public virtual void Enter()

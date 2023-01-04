@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Core",
+    "\\Core\\CoreComponents",
+    "\\Enemies",
+    "\\Enemies\\State Machine",
+    "\\Enemies\\States"
+  ],
+  "SelectedNode": "\\Core\\CoreComponents\\Movement.cs",
+  "PreviewInSolutionExplorer": false
+}

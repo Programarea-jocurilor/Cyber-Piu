@@ -40,12 +40,6 @@ public class PlayerInAirState : PlayerState
         isTouchingWall = core.CollisionSenses.WallFront;
         isTouchingWallBack = core.CollisionSenses.WallBack;
 
-
-        // isGrounded = core.CollisionSenses.Ground;
-        // isTouchingWall = core.CollisionSenses.WallFront;
-        // isTouchingWallBack = core.CollisionSenses.WallBack;
-        // isTouchingLedge = core.CollisionSenses.LedgeHorizontal;
-
         // if(isTouchingWall && !isTouchingLedge)
         // {
         //     player.LedgeClimbState.SetDetectedPosition(player.transform.position);
@@ -150,54 +144,6 @@ public class PlayerInAirState : PlayerState
             player.Anim.SetFloat("yVelocity", core.Movement.CurrentVelocity.y);
             player.Anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.CurrentVelocity.x));            
         }
-
-        // if (player.InputHandler.AttackInputs[(int)CombatInputs.primary])
-        // {
-        //     stateMachine.ChangeState(player.PrimaryAttackState);
-        // }
-        // else if (player.InputHandler.AttackInputs[(int)CombatInputs.secondary])
-        // {
-        //     stateMachine.ChangeState(player.SecondaryAttackState);
-        // }
-        // else if (isGrounded && core.Movement.CurrentVelocity.y < 0.01f)
-        // {            
-        //     stateMachine.ChangeState(player.LandState);
-        // }
-        // else if(isTouchingWall && !isTouchingLedge && !isGrounded)
-        // {
-        //     stateMachine.ChangeState(player.LedgeClimbState);
-        // }
-        // else if(jumpInput && (isTouchingWall || isTouchingWallBack || wallJumpCoyoteTime))
-        // {
-        //     StopWallJumpCoyoteTime();
-        //     isTouchingWall = core.CollisionSenses.WallFront;
-        //     player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
-        //     stateMachine.ChangeState(player.WallJumpState);
-        // }
-        // else if(jumpInput && player.JumpState.CanJump())
-        // {
-        //     stateMachine.ChangeState(player.JumpState);
-        // }
-        // else if(isTouchingWall && grabInput && isTouchingLedge)
-        // {
-        //     stateMachine.ChangeState(player.WallGrabState);
-        // }
-        // else if(isTouchingWall && xInput == core.Movement.FacingDirection && core.Movement.CurrentVelocity.y <= 0)
-        // {
-        //     stateMachine.ChangeState(player.WallSlideState);
-        // }
-        // else if(dashInput && player.DashState.CheckIfCanDash())
-        // {
-        //     stateMachine.ChangeState(player.DashState);
-        // }
-        // else
-        // {
-        //     core.Movement.CheckIfShouldFlip(xInput);
-        //     core.Movement.SetVelocityX(playerData.movementVelocity * xInput);
-
-        //     player.Anim.SetFloat("yVelocity", core.Movement.CurrentVelocity.y);
-        //     player.Anim.SetFloat("xVelocity", Mathf.Abs(core.Movement.CurrentVelocity.x));
-        // }
 
     }
 

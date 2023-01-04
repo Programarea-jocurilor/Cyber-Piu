@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private AttackDetails attackDetails;
+    // private AttackDetails attackDetails;
 
     private float speed;
     private float travelDistance;
@@ -60,7 +60,7 @@ public class Projectile : MonoBehaviour
 
         if(damageHit)
         {
-            damageHit.transform.SendMessage("Damage", attackDetails);
+            // damageHit.transform.SendMessage("Damage", attackDetails);
             Destroy(gameObject);
         }
         if(groundHit)
@@ -83,7 +83,7 @@ public class Projectile : MonoBehaviour
     {
         this.speed = speed;
         this.travelDistance = travelDistance;
-        attackDetails.damageAmount = damage;
+        // attackDetails.damageAmount = damage;
     }
 
     private void OnDrawGizmos()

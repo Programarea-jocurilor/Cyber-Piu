@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq; //library for list functions
 
 public class MainWeapon : Weapon
 {
     protected SO_MainWeaponData mainWeaponData; 
 
     private List<IDamageable> detectedDamageables = new List<IDamageable>();
-    // private List<IKnockbackable> detectedKnockbackables = new List<IKnockbackable>();
+    private List<IKnockbackable> detectedKnockbackables = new List<IKnockbackable>();
 
     protected override void Awake()
     {
@@ -32,18 +33,17 @@ public class MainWeapon : Weapon
 
     private void CheckMeleeAttack()
     {
-        WeaponAttackDetails details = mainWeaponData.AttackDetails[attackCounter]; //!!!
+        WeaponAttackDetails details = mainWeaponData.AttackDetails[attackCounter]; 
         // Debug.Log(details.damageAmount);
-        foreach (IDamageable item in detectedDamageables)
+        foreach (IDamageable item in detectedDamageables.ToList())
         {
             item.Damage(details.damageAmount);
-
         }
 
-        // foreach (IKnockbackable item in detectedKnockbackables.ToList())
-        // {
-        //     item.Knockback(details.knockbackAngle, details.knockbackStrength, core.Movement.FacingDirection);
-        // }
+        foreach (IKnockbackable item in detectedKnockbackables.ToList())
+        {
+            item.Knockback(details.knockbackAngle, details.knockbackStrength, core.Movement.FacingDirection);
+        }
     }
 
     public void AddToDetected(Collider2D collision)
@@ -56,12 +56,12 @@ public class MainWeapon : Weapon
             detectedDamageables.Add(damageable);
         }
 
-        // IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
 
-        // if(knockbackable != null)
-        // {
-        //     detectedKnockbackables.Add(knockbackable);
-        // }
+        if(knockbackable != null)
+        {
+            detectedKnockbackables.Add(knockbackable);
+        }
     }
 
     public void RemoveFromDetected(Collider2D collision)
@@ -74,12 +74,12 @@ public class MainWeapon : Weapon
             detectedDamageables.Remove(damageable);
         }
 
-        // IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
+        IKnockbackable knockbackable = collision.GetComponent<IKnockbackable>();
 
-        // if (knockbackable != null)
-        // {
-        //     detectedKnockbackables.Remove(knockbackable);
-        // }
+        if (knockbackable != null)
+        {
+            detectedKnockbackables.Remove(knockbackable);
+        }
     }
    
 }
