@@ -6,8 +6,20 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
 {
     // [SerializeField] private float maxKnockbackTime = 0.2f;
     
+    [SerializeField] private GameObject damageParticles;
+    
     private bool isKnockbackActive;
     private float knockbackStartTime;
+
+	private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+	private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+	private Stats Stats { get => stats ?? core.GetCoreComponent(ref stats); }
+	private ParticleManager ParticleManager => particleManager ? particleManager : core.GetCoreComponent(ref particleManager);
+
+	private Movement movement;
+	private CollisionSenses collisionSenses;
+	private Stats stats;    
+	private ParticleManager particleManager;
 
     public override void LogicUpdate()
     {
@@ -17,25 +29,26 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
     public void Damage(float amount)
     {
         // throw new System.NotImplementedException();
-        // Debug.Log(core.transform.parent.name + " Damaged!");
-        core.Stats.DecreaseHealth(amount);
+        // Debug.Log(transform.parent.name + " Damaged!");
+        Stats.DecreaseHealth(amount);
+		ParticleManager.StartParticlesWithRandomRotation(damageParticles);
     }
 
     public void Knockback(Vector2 angle, float strength, int direction)
     {
-        core.Movement.SetVelocity(strength, angle, direction);
-        core.Movement.CanSetVelocity = false;
+        Movement.SetVelocity(strength, angle, direction);
+        Movement.CanSetVelocity = false;
         isKnockbackActive = true;
         knockbackStartTime = Time.time;
     }
 
     private void CheckKnockback()
     {
-        //if(isKnockbackActive && ((core.Movement.CurrentVelocity.y <= 0.01f && (core.CollisionSenses.Ground) || Time.time >= knockbackStartTime + maxKnockbackTime))
-        if(isKnockbackActive && core.Movement.CurrentVelocity.y <= 0.01f && core.CollisionSenses.Ground)
+        //if(isKnockbackActive && ((Movement.CurrentVelocity.y <= 0.01f && (CollisionSenses.Ground) || Time.time >= knockbackStartTime + maxKnockbackTime))
+        if(isKnockbackActive && Movement.CurrentVelocity.y <= 0.01f && CollisionSenses.Ground)
         {
             isKnockbackActive = false;
-            core.Movement.CanSetVelocity = true;
+            Movement.CanSetVelocity = true;
         }
     }
 }

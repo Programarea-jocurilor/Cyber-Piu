@@ -1,12 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Core",
     "\\Core\\CoreComponents",
-    "\\Enemies",
     "\\Enemies\\State Machine",
-    "\\Enemies\\States"
+    "\\Enemies\\States",
+    "\\PlayerCharacter",
+    "\\PlayerCharacter\\PlayerStates",
+    "\\PlayerCharacter\\PlayerStates\\SubStates",
+    "\\PlayerCharacter\\PlayerStates\\SuperStates"
   ],
-  "SelectedNode": "\\Core\\CoreComponents\\Movement.cs",
+  "SelectedNode": "\\PlayerCharacter\\PlayerStates\\SuperStates\\PlayerAbilityState.cs",
   "PreviewInSolutionExplorer": false
 }

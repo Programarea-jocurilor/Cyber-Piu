@@ -15,6 +15,12 @@ public class LookForPlayerState : State
 
     protected int amountOfTurnsDone;
 
+	private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+	private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+
+	private Movement movement;
+	private CollisionSenses collisionSenses;
+
     public LookForPlayerState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_LookForPlayer stateData) : base(etity, stateMachine, animBoolName)
     {
         this.stateData = stateData;
@@ -37,7 +43,7 @@ public class LookForPlayerState : State
         lastTurnTime = startTime;
         amountOfTurnsDone = 0;
 
-        core.Movement.SetVelocityX(0f);
+        Movement.SetVelocityX(0f);
 
     }
 
@@ -49,10 +55,10 @@ public class LookForPlayerState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        core.Movement.SetVelocityX(0f);
+        Movement.SetVelocityX(0f);
         if(turnImmediately)
         {
-            core.Movement.Flip();
+            Movement.Flip();
             lastTurnTime = Time.time;
             amountOfTurnsDone++;
             turnImmediately = false;
@@ -60,7 +66,7 @@ public class LookForPlayerState : State
         }
         else if(Time.time >= lastTurnTime + stateData.timeBetweenTurns && !isAllTurnsDone)
         {
-            core.Movement.Flip();
+            Movement.Flip();
             lastTurnTime = Time.time;
             amountOfTurnsDone++;
         }

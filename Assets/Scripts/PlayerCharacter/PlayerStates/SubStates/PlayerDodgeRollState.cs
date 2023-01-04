@@ -19,7 +19,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
     {
         base.Enter();
         player.InputHandler.UseDodgeRollInput();
-        dodgeRollDirection = core.Movement.FacingDirection;
+        dodgeRollDirection = Movement.FacingDirection;
     }
 
     public override void Exit()
@@ -33,7 +33,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
         if(!isExitingState)
         {
-            core.Movement.SetVelocityX(playerData.dodgeRollVelocity * dodgeRollDirection);
+            Movement.SetVelocityX(playerData.dodgeRollVelocity * dodgeRollDirection);
             CheckIfShouldPlaceAfterImage();
 
             if(Time.time >= startTime + playerData.dodgeRollTime)
@@ -47,7 +47,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
     public bool CheckIfCanDodgeRoll()
     {
-        return Time.time >= lastDodgeRollTime + playerData.dodgeRollCooldown && core.CollisionSenses.Ground;
+        return Time.time >= lastDodgeRollTime + playerData.dodgeRollCooldown && CollisionSenses.Ground;
     }
 
     private void CheckIfShouldPlaceAfterImage()

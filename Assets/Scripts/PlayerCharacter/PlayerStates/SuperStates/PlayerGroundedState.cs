@@ -14,6 +14,13 @@ public class PlayerGroundedState : PlayerState
     private bool dashInput;
     private bool dodgeRollInput;
 
+    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+	private Movement movement;
+
+
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+    private CollisionSenses collisionSenses;
+
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -22,8 +29,11 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = core.CollisionSenses.Ground;
-        // isTouchingWall = core.CollisionSenses.WallFront;
+        if(CollisionSenses) 
+        {
+            isGrounded = CollisionSenses.Ground;
+            // isTouchingWall = CollisionSenses.WallFront;
+        }
     }
 
     public override void Enter()
@@ -78,24 +88,6 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.DodgeRollState);
         }
-
-
-        
-        // else if (JumpInput && player.JumpState.CanJump())
-        // {
-        //     stateMachine.ChangeState(player.JumpState);
-        // }else if (!isGrounded)
-        // {
-        //     player.InAirState.StartCoyoteTime();
-        //     stateMachine.ChangeState(player.InAirState);
-        // }else if(isTouchingWall && grabInput && isTouchingLedge)
-        // {
-        //     stateMachine.ChangeState(player.WallGrabState);
-        // }
-        // else if (dashInput && player.DashState.CheckIfCanDash() && !isTouchingCeiling)
-        // {
-        //     stateMachine.ChangeState(player.DashState);
-        // }
     }
 
     public override void PhysicsUpdate()
