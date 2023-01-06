@@ -49,6 +49,7 @@ public class Shoot : MonoBehaviour
             {
                 timer=0; //resetam timerul
                 EnemyShoot();//trage
+                //FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
                 // anim.SetTrigger("shoot");
             }
         }

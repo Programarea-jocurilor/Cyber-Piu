@@ -15,6 +15,10 @@ public class ObjectToShoot : MonoBehaviour
 
     public float speed;
 
+    void Awake()
+    {
+        //FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
+    }
     // Start is called before the first frame update
     void Start()
     {

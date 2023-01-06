@@ -356,8 +356,11 @@ GameObject:
   - component: {fileID: 5000608021719912158}
   - component: {fileID: 5000608021719912145}
   - component: {fileID: 5000608021719912144}
-  - component: {fileID: 5000608021719912147}
   - component: {fileID: 5000608021719912150}
+  - component: {fileID: 1717457503}
+  - component: {fileID: 1717457504}
+  - component: {fileID: 1717457505}
+  - component: {fileID: 1984832339450226357}
   m_Layer: 6
   m_Name: PlayerNewV
   m_TagString: Player
@@ -597,7 +600,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.4140625, y: 0.4765625}
+  m_Size: {x: 0.453125, y: 0.5234375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -644,32 +647,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!61 &5000608021719912147
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5000608021719912153}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.0055668205, y: 0.008421339}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4140625, y: 0.4765625}
-    newSize: {x: 0.4140625, y: 0.4765625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.3583934, y: 0.4374525}
-  m_EdgeRadius: 0
 --- !u!114 &5000608021719912150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,6 +661,66 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapons:
   - {fileID: 5000608020394024464}
+--- !u!114 &1717457503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000608021719912153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b281b8e0b1364f941a2c3c998817bb2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drowsyDuration: 5
+  invincibilityTime: 5
+  cantAttackTime: 5
+  positionToSpawnChickenLeg: {fileID: 0}
+  chickenLeg: {fileID: 0}
+--- !u!114 &1717457504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000608021719912153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28eb7c9ebe282264081815750d993718, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: {fileID: 1717457505}
+  fallDetector: {fileID: 0}
+--- !u!114 &1717457505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000608021719912153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a71d8b2eefe513a47a778a36d7dc0620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingHealth: 10
+--- !u!70 &1984832339450226357
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5000608021719912153}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006511688, y: 0}
+  m_Size: {x: 0.36382982, y: 0.4765625}
+  m_Direction: 0
 --- !u!1 &5000608021907012298
 GameObject:
   m_ObjectHideFlags: 0

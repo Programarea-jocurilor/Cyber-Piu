@@ -34,6 +34,7 @@ public class DroneMovement : MonoBehaviour
         {
             timer=0; //resetam timerul
             EnemyShoot();//trage
+            //FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
         }
         
     }

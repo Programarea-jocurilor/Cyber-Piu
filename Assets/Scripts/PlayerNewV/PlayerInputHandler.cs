@@ -52,6 +52,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
+            FindObjectOfType<SoundManager>().PlaySound("PiuAttack");
         }
 
         if (context.canceled)
@@ -65,6 +66,7 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.started)
         {
             AttackInputs[(int)CombatInputs.secondary] = true;
+            FindObjectOfType<SoundManager>().PlaySound("PiuAttack");
         }
 
         if (context.canceled)
@@ -75,6 +77,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
+        FindObjectOfType<SoundManager>().PlaySound("PiuRun");
         RawMovementInput = context.ReadValue<Vector2>();
 
         NormInputX = Mathf.RoundToInt(RawMovementInput.x);
@@ -102,6 +105,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
+            FindObjectOfType<SoundManager>().PlaySound("PiuJump");
             JumpInput = true;
             JumpInputStop = false;
             jumpInputStartTime = Time.time;
