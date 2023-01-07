@@ -4,23 +4,16 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    // private AttackDetails attackDetails;
-
+    // // private AttackDetails attackDetails;
+    // protected Core core;
     private float speed;
     private float travelDistance;
     private float xStartPos;
-    private Core core;
-    protected Combat Combat { get => combat ?? core.GetCoreComponent(ref combat); }
-	private Combat combat;
-
+    
     // [SerializeField]
     // private float gravity;
-    [SerializeField] private float attackDamage = 1f;
-
-    [SerializeField] private Vector2 knockbackAngle = Vector2.one;
-    [SerializeField] private float knockbackStrength = 10f;
-    
-    [SerializeField] private float damageRadius;
+    [SerializeField]
+    private float damageRadius;
 
     private Rigidbody2D rb;
 
@@ -35,8 +28,6 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
-    private int facingDirection;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -48,14 +39,28 @@ public class Projectile : MonoBehaviour
         //isGravityOn = false;
     }
 
+    // private void Update()
+    // {
+    //     if(!hasHitGround)
+    //     {
+    //         attackDetails.position = transform.position;
+            
+    //         if(isGravityOn)
+    //         {
+    //             float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
+    //             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    //         }
+    //     }
+    // }
+
     private void FixedUpdate()
     {
         Collider2D damageHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsPlayer);
         Collider2D groundHit = Physics2D.OverlapCircle(damagePosition.position, damageRadius, whatIsGround);
-        
-        if (damageHit)
+
+        if(damageHit)
         {
-            //Combat.Damage(attackDamage);
+            //damageHit.transform.SendMessage("Damage", 1f);
             Destroy(gameObject);
         }
         if(groundHit)
@@ -85,9 +90,4 @@ public class Projectile : MonoBehaviour
     {
         Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
     }
-
-    // public void Damage(float amount)
-    // {
-    //     Stats.DecreaseHealth(amount);
-    // }
 }

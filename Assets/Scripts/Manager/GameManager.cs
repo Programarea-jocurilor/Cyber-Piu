@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheckRespawn();
-        Debug.Log(respawn);
     }
     public void Respawn()
     {
