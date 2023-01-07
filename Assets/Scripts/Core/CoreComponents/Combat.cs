@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Combat : CoreComponent, IDamageable, IKnockbackable
 {
-    // [SerializeField] private float maxKnockbackTime = 0.2f;
+    [SerializeField] private float maxKnockbackTime = 0.2f;
     
     [SerializeField] private GameObject damageParticles;
     
     private bool isKnockbackActive;
+    public bool isDamageable = true;
     private float knockbackStartTime;
 
 	private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
@@ -28,24 +29,28 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
 
     public void Damage(float amount)
     {
-        // throw new System.NotImplementedException();
-        // Debug.Log(transform.parent.name + " Damaged!");
-        Stats.DecreaseHealth(amount);
-		ParticleManager.StartParticlesWithRandomRotation(damageParticles);
+        if(isDamageable)
+        {
+            Stats.DecreaseHealth(amount);
+		    ParticleManager.StartParticlesWithRandomRotation(damageParticles);
+        }
+
     }
 
     public void Knockback(Vector2 angle, float strength, int direction)
     {
-        Movement.SetVelocity(strength, angle, direction);
-        Movement.CanSetVelocity = false;
-        isKnockbackActive = true;
-        knockbackStartTime = Time.time;
+        if(isDamageable)
+        {
+            Movement.SetVelocity(strength, angle, direction);
+            Movement.CanSetVelocity = false;
+            isKnockbackActive = true;
+            knockbackStartTime = Time.time;
+        }
     }
 
     private void CheckKnockback()
     {
-        //if(isKnockbackActive && ((Movement.CurrentVelocity.y <= 0.01f && (CollisionSenses.Ground) || Time.time >= knockbackStartTime + maxKnockbackTime))
-        if(isKnockbackActive && Movement.CurrentVelocity.y <= 0.01f && CollisionSenses.Ground)
+        if(isKnockbackActive && ((Movement.CurrentVelocity.y <= 0.01f && (CollisionSenses.Ground) || Time.time >= knockbackStartTime + maxKnockbackTime)))
         {
             isKnockbackActive = false;
             Movement.CanSetVelocity = true;

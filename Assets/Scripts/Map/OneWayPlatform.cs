@@ -4,48 +4,26 @@ using UnityEngine;
 
 public class OneWayPlatform : MonoBehaviour
 {
-    private PlatformEffector2D effector;
-    public float waitTimeSet;
-    private float waitTime;
-
+    [SerializeField]
+    private GameObject player;
 
     void Start()
     {
-        effector = GetComponent<PlatformEffector2D>();
-        waitTime = waitTimeSet;
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyUp(KeyCode.DownArrow))
-        {
-            waitTime = waitTimeSet;
-        }
-        
         if(Input.GetKey("s"))
         {
-            if(waitTime <= 0)
-            {
-                effector.rotationalOffset = 180f;
-                waitTime = waitTimeSet;
-                Invoke("ResetRotation", 0.3f);
-            }
-            else
-            {
-                waitTime -= Time.deltaTime;
-            }
 
-        }
-        
-        if(Input.GetButtonDown("Jump") && Input.GetAxisRaw("Vertical") > 0) 
-        {
-            effector.rotationalOffset = 0;
+            Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>());
+            Invoke("ResetCollision", 0.3f);
         }
     }
 
-    void ResetRotation()
+    void ResetCollision()
     {
-        effector.rotationalOffset = 0;
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), GetComponent<Collider2D>(), false);
     }
 }

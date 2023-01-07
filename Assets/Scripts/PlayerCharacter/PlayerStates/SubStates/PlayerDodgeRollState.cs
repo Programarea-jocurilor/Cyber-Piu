@@ -11,6 +11,9 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
     private Vector2 lastAIPos;
     
+    protected Combat Combat { get => combat ?? core.GetCoreComponent(ref combat); }
+
+	private Combat combat;
     public PlayerDodgeRollState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -20,10 +23,12 @@ public class PlayerDodgeRollState : PlayerAbilityState
         base.Enter();
         player.InputHandler.UseDodgeRollInput();
         dodgeRollDirection = Movement.FacingDirection;
+        Combat.isDamageable = false;
     }
 
     public override void Exit()
     {
+        combat.isDamageable = true;
         base.Exit();
     }
 
@@ -42,7 +47,6 @@ public class PlayerDodgeRollState : PlayerAbilityState
                 lastDodgeRollTime = Time.time;
             }
         }
-        //TODO: Ignore damage
     }
 
     public bool CheckIfCanDodgeRoll()

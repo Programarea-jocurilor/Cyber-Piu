@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Death : CoreComponent
 {
+    [SerializeField] GameManager gameManager; 
     [SerializeField] private GameObject[] deathParticles;
 
     private ParticleManager ParticleManager =>
@@ -22,6 +23,14 @@ public class Death : CoreComponent
         }
         
         core.transform.parent.gameObject.SetActive(false);
+                    
+        if(gameManager)
+        {
+            if(core.transform.parent.gameObject.CompareTag("Player"))
+            {
+                gameManager.Respawn();
+            }
+        }
     }
 
     private void OnEnable()

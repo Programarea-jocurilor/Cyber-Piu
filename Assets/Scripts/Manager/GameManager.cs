@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CheckRespawn();
+        Debug.Log(respawn);
     }
     public void Respawn()
     {
@@ -37,9 +39,14 @@ public class GameManager : MonoBehaviour
     {
         if(Time.time >= respawnTimeStart + respawnTime && respawn)
         {
-            var playerTemp = Instantiate(player, respawnPoint);
-            CVC.m_Follow = playerTemp.transform;
-            respawn = false;
+            // var playerTemp = Instantiate(player, respawnPoint);
+            // CVC.m_Follow = playerTemp.transform;
+
+            // respawn = false;
+            // player.transform.position = respawnPoint.transform.position;
+            // player.SetActive(true);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
