@@ -52,7 +52,7 @@ public class PlayerMoveState : PlayerGroundedState
             stateMachine.ChangeState(player.IdleState);
         }
         //Debug.Log("playerData");
-        Debug.Log(core.Movement.CurrentVelocity);
+        //Debug.Log(core.Movement.CurrentVelocity);
     }
 
     public override void PhysicsUpdate()

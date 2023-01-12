@@ -13,4 +13,6 @@ public class CoreComponent : MonoBehaviour
         if(core == null) { Debug.LogError("There is no Core on the parent"); }
     }
 
+    //public virtual void LogicUpdate() { }
+
 }

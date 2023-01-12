@@ -12,12 +12,18 @@ public class EnemyThatShootsAtCertainFireRangeShoot : MonoBehaviour
 
     public float range;
     private float timer;
+    private Health enemyHealth;
+
+    private void Awake()
+    {
+        enemyHealth = GetComponent<Health>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer>2) //daca au trecut 2 secunde
+        if(timer>2 && enemyHealth.currentHealth > 0) //daca au trecut 2 secunde
         {
             timer=0; //resetam timerul
             EnemyShoot();//trage
@@ -28,9 +34,9 @@ public class EnemyThatShootsAtCertainFireRangeShoot : MonoBehaviour
     void EnemyShoot()
     {
         RaycastHit2D hit=Physics2D.Linecast(firePoint.position,playerTransform.position);
-        if (hit.collider!=null)
             if(hit.collider.tag=="Player")
-            {   
+            { 
+                FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
                 GameObject objectToShootClone=Instantiate(objectToShoot,firePoint.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
                 objectToShootClone.SetActive(true);
                 Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy

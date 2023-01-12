@@ -18,6 +18,11 @@ public class EnemyHealth : MonoBehaviour
 
     public Vector3 healthBarOffset;
 
+    public GameObject[] spawnParticleSystem;
+
+    public GameObject wall1;
+
+    public GameObject wall2;
     private float fillValue;
     void Start()
     {
@@ -52,6 +57,14 @@ public class EnemyHealth : MonoBehaviour
                 {
                 Destroy(targetToFollow.gameObject);
                 Destroy(this.gameObject);
+                if(this.gameObject.tag=="Boss")
+                {
+                    foreach (GameObject sp in spawnParticleSystem)
+                        sp.GetComponent<ParticleSystem>().Play();
+                        
+                    wall1.SetActive(false);
+                    wall2.SetActive(false);
+                }
                 }
         }
          if(Input.GetKeyDown(KeyCode.F))

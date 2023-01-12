@@ -17,6 +17,8 @@ public class DroneMovement : MonoBehaviour
     public Transform objectToShootTransform;
 
     public Transform playerTransform;
+
+    public Transform firePoint;
     private float timer;
     // Start is called before the first frame update
     void Start()
@@ -40,9 +42,14 @@ public class DroneMovement : MonoBehaviour
 
     void EnemyShoot()
     {
-        GameObject objectToShootClone=Instantiate(objectToShoot,objectToShootTransform.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
-        objectToShootClone.SetActive(true);
-        Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy
+        RaycastHit2D hit=Physics2D.Linecast(firePoint.position,playerTransform.position);
+        if (hit.collider!=null)
+            if(hit.collider.tag=="Player")
+            {   
+                GameObject objectToShootClone=Instantiate(objectToShoot,firePoint.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
+                objectToShootClone.SetActive(true);
+                Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy
+            }
     }
 
     // Update is called once per frame
