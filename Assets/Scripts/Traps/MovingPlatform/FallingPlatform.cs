@@ -36,7 +36,7 @@ public class FallingPlatform : MonoBehaviour
     void DropPlatform()
     {
         rb.isKinematic = false;
-        Invoke("GetPlatformBack", 2.5f);
+        Invoke("GetPlatformBack", 4f);
     }
 
     void GetPlatformBack()

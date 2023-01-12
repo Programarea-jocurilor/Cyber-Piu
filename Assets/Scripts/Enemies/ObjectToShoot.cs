@@ -15,10 +15,9 @@ public class ObjectToShoot : MonoBehaviour
 
     public float speed;
 
-    void Awake()
-    {
-        //FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
-    }
+    public EnemyHealth enemyHealthScript;
+
+    public GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,9 +46,18 @@ public class ObjectToShoot : MonoBehaviour
             {
                 if(collider.gameObject.tag!="Player")
                 {
-                    GameObject friedEggClone=Instantiate(friedEgg,this.transform.position,Quaternion.identity);
-                    friedEggClone.SetActive(true);
-                    Destroy(friedEggClone,2f);
+                    if(enemyHealthScript.currentHealth>enemyHealthScript.maxHealth/2f)
+                    {
+                        GameObject friedEggClone=Instantiate(friedEgg,this.transform.position,Quaternion.identity);
+                        friedEggClone.SetActive(true);
+                        Destroy(friedEggClone,2f);
+                    }
+                    else
+                    {
+                        GameObject explosionClone=Instantiate(explosion,this.transform.position,Quaternion.identity);
+                        explosionClone.SetActive(true);
+                        Destroy(explosionClone,2f);
+                    }
                 }
                 Destroy(this.gameObject);
             }
