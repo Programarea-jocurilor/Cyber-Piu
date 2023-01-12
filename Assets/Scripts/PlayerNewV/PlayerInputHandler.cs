@@ -31,6 +31,7 @@ public class PlayerInputHandler : MonoBehaviour
     private float dashInputStartTime;
     private float dodgeRollInputStartTime;
 
+    public static bool isDrowsy;
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -39,6 +40,8 @@ public class PlayerInputHandler : MonoBehaviour
         AttackInputs = new bool[count];
 
         cam = Camera.main;
+
+        isDrowsy=false;
     }
 
     private void Update()
@@ -49,7 +52,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnPrimaryAttackInput(InputAction.CallbackContext context)
     {
-        if (context.started)
+        if(ChickenInteractionWithCollectibles.canAttack)
+        {
+            if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
         }
@@ -57,6 +62,8 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.primary] = false;
+        }
+        
         }
     }
 
@@ -77,7 +84,10 @@ public class PlayerInputHandler : MonoBehaviour
     {
         RawMovementInput = context.ReadValue<Vector2>();
 
-        NormInputX = Mathf.RoundToInt(RawMovementInput.x);
+        if(!isDrowsy)
+            NormInputX = Mathf.RoundToInt(RawMovementInput.x);
+        else
+             NormInputX = Mathf.RoundToInt(-RawMovementInput.x);
         NormInputY = Mathf.RoundToInt(RawMovementInput.y);
         // if(Mathf.Abs(RawMovementInput.x)>0.01f)
         // {

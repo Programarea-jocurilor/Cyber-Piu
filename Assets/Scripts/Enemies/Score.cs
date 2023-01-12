@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI score;
    
     private static float scoreValue;
+
     void Start()
     {
         scoreValue=0;
@@ -18,6 +19,7 @@ public class Score : MonoBehaviour
     {
         if(collider.gameObject.tag=="Player")
         {
+            FindObjectOfType<SoundManager>().PlaySound("PiuCollectCoins");
             scoreValue = scoreValue + 100;
             score.text="Score:"+scoreValue.ToString();
             Destroy(this.gameObject);

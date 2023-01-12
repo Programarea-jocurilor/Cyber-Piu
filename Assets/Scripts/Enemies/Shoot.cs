@@ -18,11 +18,13 @@ public class Shoot : MonoBehaviour
     private float distance;
     
     private Animator anim;
+    private Health enemyHealth;
   
     void Awake()
     {
         if(this.gameObject.tag!="Boss") //pentru ca bossul nu are animatie momentan
             anim = GetComponent<Animator>();
+        enemyHealth = GetComponent<Health>();
     }
 
     // Update is called once per frame
@@ -31,13 +33,13 @@ public class Shoot : MonoBehaviour
     
         distance=Vector2.Distance(transform.position,playerTransform.position);
         if(this.gameObject.tag!="Boss")
-            {if(distance<10)// trage doar daca suntem la o distanta mai mica de 10
+            {if(distance<100)// trage doar daca suntem la o distanta mai mica de 10
         {
             timer+=Time.deltaTime;
-            if(timer>2) //daca au trecut 2 secunde
+            if(timer>2 && enemyHealth.currentHealth > 0) //daca au trecut 2 secunde
             {
                 timer=0; //resetam timerul
-                anim.SetTrigger("shoot");
+                
                 EnemyShoot();//trage
             }
         }
@@ -49,6 +51,7 @@ public class Shoot : MonoBehaviour
             {
                 timer=0; //resetam timerul
                 EnemyShoot();//trage
+                //FindObjectOfType<SoundManager>().PlaySound("EnemyShoot");
                 // anim.SetTrigger("shoot");
             }
         }
@@ -59,6 +62,8 @@ public class Shoot : MonoBehaviour
         RaycastHit2D hit=Physics2D.Linecast(firePoint.position,playerTransform.position);
         if(hit.collider.tag=="Player")
         {   
+        if(this.gameObject.tag!="Boss")
+            anim.SetTrigger("shoot");    
         GameObject objectToShootClone=Instantiate(objectToShoot,objectToShootTransform.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
         objectToShootClone.SetActive(true);
         Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy

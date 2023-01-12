@@ -83,33 +83,6 @@ public class MeleeEnemy : MonoBehaviour
         new Vector3(boxCollider.bounds.size.x * range, boxCollider.bounds.size.y, boxCollider.bounds.size.z));
     }
 
-    // private void OnTriggerEnter2D(Collider2D external)
-    // {
-    //     if(external.gameObject.CompareTag("Player"))
-    //     {
-    //         PlayerPrefs.SetInt("CurrentHealth", PlayerPrefs.GetInt("CurrentHealth")-damage); 
-    //     }
-
-    //     if(external.gameObject.CompareTag("Weapon"))
-    //     {
-    //         currentHealth -= 1;
-            
-    //         if(currentHealth<=0)
-    //         {
-    //             anim.SetTrigger("dead");
-    //             GetComponentInParent<EnemyPatrol>().enabled = false;
-    //             StartCoroutine(WaitAndDie());
-    //         }
-    //         else
-    //         {
-    //             anim.SetTrigger("hurt2");
-    //             GetComponentInParent<EnemyPatrol>().enabled = false;
-    //             StartCoroutine(WaitWhileHurt());
-    //         }
-            
-    //     }
-    // }
-
     IEnumerator WaitAndFight()
     {
         yield return new WaitForSeconds(0.5f);
@@ -132,6 +105,7 @@ public class MeleeEnemy : MonoBehaviour
     {
         if (PlayerInSight())
             playerHealth.TakeDamage(damage);
+            FindObjectOfType<SoundManager>().PlaySound("PatrollingEnemyAttack");
     }
 
 }

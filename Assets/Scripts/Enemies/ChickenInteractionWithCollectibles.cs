@@ -23,6 +23,9 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
 
    public GameObject chickenLeg;
 
+    public Health playerHealthScript;
+
+    public int explosionDamage;
    private float collectedCantAttackPotion;
     void Start()
     {
@@ -36,8 +39,8 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
    {
     if((Time.time>=collectedDrowsyPotion+drowsyDuration)&&collectedDrowsyPotion!=0)
     {
-        if(PlayerController.isDrowsy)
-            PlayerController.isDrowsy=false;
+        if(PlayerInputHandler.isDrowsy)
+            PlayerInputHandler.isDrowsy=false;
     }
     if((Time.time>=collectedInvincibilityPotion+invincibilityTime)&&collectedInvincibilityPotion!=0)
     {
@@ -54,7 +57,7 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
    {
     if(collider.gameObject.tag=="DrowsyPotion")
     {
-        PlayerController.isDrowsy=true;
+        PlayerInputHandler.isDrowsy=true;
         collectedDrowsyPotion=Time.time;
         Destroy(collider.gameObject);
     }
@@ -78,9 +81,14 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
         chickenLegClone.AddComponent<Rigidbody2D>();
         chickenLegClone.GetComponent<Rigidbody2D>().collisionDetectionMode=CollisionDetectionMode2D.Continuous;
         chickenLegClone.GetComponent<Rigidbody2D>().interpolation=RigidbodyInterpolation2D.Interpolate;
+        chickenLegClone.GetComponent<Rigidbody2D>().gravityScale=5f;
         if(!chickenLegClone.activeInHierarchy)
             chickenLegClone.SetActive(true);
         Destroy(collider.gameObject);
+     }
+     if(collider.gameObject.tag=="Explosion")
+     {
+        playerHealthScript.TakeDamage(explosionDamage);
      }
    }
 }

@@ -14,6 +14,7 @@ public class HealthPotion : MonoBehaviour
                 playerHealthScript.AddHealth(healValue);
             else
                 playerHealthScript.TakeDamage(healValue);
+            FindObjectOfType<SoundManager>().PlaySound("PiuCollectHearts");
             Destroy(this.gameObject);
         }
     }

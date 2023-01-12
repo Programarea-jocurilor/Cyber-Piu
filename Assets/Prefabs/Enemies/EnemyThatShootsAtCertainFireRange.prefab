@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1561412918}
   - component: {fileID: 1561412913}
   - component: {fileID: 1370903894}
+  - component: {fileID: 1618562809}
   m_Layer: 6
   m_Name: EnemyThatShootsAtCertainFireRange
   m_TagString: Enemy
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71d8b2eefe513a47a778a36d7dc0620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 3
+  startingHealth: 1
 --- !u!114 &1370903894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +182,19 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 5
   rotationModifier: 0
+--- !u!114 &1618562809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4920383701242852124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd6ddc4ceb45bd14f8ebfa0fb6fca632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitParticles: {fileID: 3746797949470833013, guid: f190f59598427ac4ba0affa4c914edfe, type: 3}
 --- !u!1 &4920383702295265526
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +219,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4920383702295265526}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.81, y: 0, z: 0}
+  m_LocalPosition: {x: 0.697, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -225,11 +239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573592551967782379, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.805006
+      value: 0.697
       objectReference: {fileID: 0}
     - target: {fileID: 573592551967782379, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.6334956
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 573592551967782379, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -269,7 +283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_Color.b
-      value: 0.17153573
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_Color.g
@@ -277,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4579436692274807511, guid: c37fcb33becb52140bc4aae106f9bf9a, type: 3}
       propertyPath: m_SortingLayer
