@@ -42,6 +42,7 @@ public class SoundManager : MonoBehaviour
             Debug.LogWarning("Sound: " + _name + " not found!");
             return;
         }
+        s.source.outputAudioMixerGroup = s.group;
         s.source.Play();
     }
 }

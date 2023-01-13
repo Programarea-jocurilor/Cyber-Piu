@@ -77,3 +77,6 @@ TagManager:
   - name: Forground
     uniqueID: 3405137641
     locked: 0
+  - name: Pause canvas
+    uniqueID: 2089377473
+    locked: 0
