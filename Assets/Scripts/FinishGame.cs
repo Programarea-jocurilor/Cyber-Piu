@@ -5,11 +5,12 @@ using UnityEngine;
 public class FinishGame : MonoBehaviour
 {
     public GameObject finishCanvas;
-
+    public bool finish = false;
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.gameObject.tag=="Player")
         {
+            finish=true;
             Time.timeScale=0;
             finishCanvas.SetActive(true);
         }
