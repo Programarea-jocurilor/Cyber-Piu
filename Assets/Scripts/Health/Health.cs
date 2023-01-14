@@ -1,3 +1,4 @@
+using System.IO;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -6,6 +7,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    public GameObject finishCanvas;
 
     private void Awake()
     {
@@ -31,7 +33,16 @@ public class Health : MonoBehaviour
         //         dead = true;
         //     }
         // }
+        if(this.gameObject.tag == "Player")
+            if (currentHealth == 0)
+            {
+                dead = true;
+                Time.timeScale=0;
+                this.gameObject.SetActive(false);
+                finishCanvas.SetActive(true);
+            }
     }
+
     public void AddHealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, startingHealth);
