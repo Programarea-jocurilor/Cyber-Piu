@@ -18,7 +18,11 @@ public class ScoreDisplay : MonoBehaviour
     void Start()
     {
        
+<<<<<<< HEAD
         var filepath = Path.Combine(Application.persistentDataPath, @"score.json");
+=======
+        var filepath = Path.Combine(Application.dataPath, @"Scripts/Menu/Score/score.json");
+>>>>>>> e721c76268c1673b3eef078cf6428d8ebe030676
         var fileName = Path.GetFullPath(filepath);
         if (File.Exists(fileName))
         {
