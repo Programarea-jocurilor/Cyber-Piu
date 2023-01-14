@@ -57,6 +57,7 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
+            FindObjectOfType<SoundManager>().PlaySound("PiuAttack");
         }
 
         if (context.canceled)
@@ -67,18 +68,18 @@ public class PlayerInputHandler : MonoBehaviour
         }
     }
 
-    public void OnSecondaryAttackInput(InputAction.CallbackContext context)
-    {
-        if (context.started)
-        {
-            AttackInputs[(int)CombatInputs.secondary] = true;
-        }
+    // public void OnSecondaryAttackInput(InputAction.CallbackContext context)
+    // {
+    //     if (context.started)
+    //     {
+    //         AttackInputs[(int)CombatInputs.secondary] = true;
+    //     }
 
-        if (context.canceled)
-        {
-            AttackInputs[(int)CombatInputs.secondary] = false;
-        }
-    }
+    //     if (context.canceled)
+    //     {
+    //         AttackInputs[(int)CombatInputs.secondary] = false;
+    //     }
+    // }
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
@@ -112,6 +113,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (context.started)
         {
+            FindObjectOfType<SoundManager>().PlaySound("PiuJump");
             JumpInput = true;
             JumpInputStop = false;
             jumpInputStartTime = Time.time;

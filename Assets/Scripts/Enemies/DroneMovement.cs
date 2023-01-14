@@ -99,11 +99,13 @@ public class DroneMovement : MonoBehaviour
         {
             moveLeft=false;
             moveRight=true;
+            transform.Rotate(new Vector3(0,180,0));
         }
          if(collider.gameObject.tag=="MarginRight")
         {
             moveLeft=true;
             moveRight=false;
+            transform.Rotate(new Vector3(0,180,0));
         }
     }
 
