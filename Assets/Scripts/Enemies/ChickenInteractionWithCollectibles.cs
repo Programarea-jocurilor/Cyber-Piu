@@ -26,6 +26,9 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
     public Health playerHealthScript;
 
     public int explosionDamage;
+
+    public GameObject shield;
+
    private float collectedCantAttackPotion;
     void Start()
     {
@@ -45,7 +48,12 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
     if((Time.time>=collectedInvincibilityPotion+invincibilityTime)&&collectedInvincibilityPotion!=0)
     {
         if(isInvincible)
+        {
             isInvincible=false;
+            shield.GetComponent<Animator>().SetTrigger("popShield");
+            StartCoroutine(WaitAndPopShield());
+        }
+            
     }
     if((Time.time>=collectedCantAttackPotion+cantAttackTime)&&collectedCantAttackPotion!=0)
     {
@@ -66,6 +74,7 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
         isInvincible=true;
         collectedInvincibilityPotion=Time.time;
         Destroy(collider.gameObject);
+        shield.SetActive(true);
     }
      if(collider.gameObject.tag=="CantAttackPotion")
     {
@@ -91,4 +100,10 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
         playerHealthScript.TakeDamage(explosionDamage);
      }
    }
+
+   IEnumerator WaitAndPopShield()
+    {
+        yield return new WaitForSeconds(0.5f);
+        shield.SetActive(false);
+    }
 }
