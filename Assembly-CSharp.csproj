@@ -138,12 +138,14 @@
     <Compile Include="Assets\Scripts\PlayerNewV\Core.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleEffectPackLightControl.cs" />
+    <Compile Include="Assets\Scripts\Menu\ScoreDisplay.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\Scripts\Enemies\AssassinEnemyController.cs" />
     <Compile Include="Assets\Scripts\Health\Health.cs" />
     <Compile Include="Assets\Scripts\Health\HealthBar.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerAfterImagePool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\Disolve.cs" />
     <Compile Include="Assets\Scripts\PlayerNewV\MainWeapon.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerController.cs" />
     <Compile Include="Assets\Scripts\PlayerNewV\PlayerFiniteStateMachine\PlayerState.cs" />
@@ -181,6 +183,7 @@
     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerAfterImageSprite.cs" />
     <Compile Include="Assets\Scripts\Enemies\Shoot.cs" />
     <Compile Include="Assets\Scripts\CameraMovement.cs" />
+    <Compile Include="Assets\Scripts\SoundSystem\MenuSoundManager.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\Map\horizontal_moving_platform.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
@@ -191,7 +194,6 @@
     <Compile Include="Assets\Scripts\Enemies\RotateTowardsPlayer.cs" />
     <Compile Include="Assets\Scripts\PlayerCharacter\Legacy\testing.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\Scripts\Menu\ScoreDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
