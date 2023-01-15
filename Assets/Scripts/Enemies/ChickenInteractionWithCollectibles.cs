@@ -28,6 +28,7 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
     public int explosionDamage;
 
     public GameObject shield;
+    private bool stayInvincible = false;
 
    private float collectedCantAttackPotion;
     void Start()
@@ -40,6 +41,12 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
     }
    void Update()
    {
+    if (Input.GetKeyDown(KeyCode.E))
+    {
+        isInvincible = true;
+        stayInvincible = true;
+
+    }
     if((Time.time>=collectedDrowsyPotion+drowsyDuration)&&collectedDrowsyPotion!=0)
     {
         if(PlayerInputHandler.isDrowsy)
@@ -49,7 +56,8 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
     {
         if(isInvincible)
         {
-            isInvincible=false;
+            if(!stayInvincible)
+                isInvincible=false;
             shield.GetComponent<Animator>().SetTrigger("popShield");
             StartCoroutine(WaitAndPopShield());
         }
@@ -99,6 +107,7 @@ public class ChickenInteractionWithCollectibles : MonoBehaviour
      {
         playerHealthScript.TakeDamage(explosionDamage);
      }
+
    }
 
    IEnumerator WaitAndPopShield()

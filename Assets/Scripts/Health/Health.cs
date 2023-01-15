@@ -1,5 +1,7 @@
 using System.IO;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class Health : MonoBehaviour
 {
@@ -7,7 +9,7 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
-    public GameObject finishCanvas;
+    //public GameObject finishCanvas;
 
     private void Awake()
     {
@@ -37,9 +39,8 @@ public class Health : MonoBehaviour
             if (currentHealth == 0)
             {
                 dead = true;
-                Time.timeScale=0;
-                this.gameObject.SetActive(false);
-                finishCanvas.SetActive(true);
+                //Time.timeScale=0;
+                //StartCoroutine(WaitAndLoadDeathCanvas());
             }
     }
 
@@ -52,5 +53,12 @@ public class Health : MonoBehaviour
     {
         // if (Input.GetKeyDown(KeyCode.E))
         //     TakeDamage(1);
+    }
+
+    private IEnumerator WaitAndLoadDeathCanvas()
+    {
+        yield return new WaitForSeconds(2f);
+        //finishCanvas.SetActive(true);
+        this.gameObject.SetActive(false);
     }
 }

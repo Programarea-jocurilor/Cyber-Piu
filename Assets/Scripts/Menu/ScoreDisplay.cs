@@ -24,11 +24,13 @@ public class ScoreDisplay : MonoBehaviour
         {
             string data = File.ReadAllText(fileName);
             scores = JsonConvert.DeserializeObject<scoreModel[]>(data);
-            Array.Sort<scoreModel>(scores, new Comparison<scoreModel>(
-                                (i1, i2) => i1.score.CompareTo(i2.score)));
-        checkScoresNumber();
         }
-        
+
+        //imi sorteaza descrescator lista
+        Array.Sort<scoreModel>(scores, new Comparison<scoreModel>(
+                                (i1, i2) => i2.score.CompareTo(i1.score)));
+        //imi ia doar primele 3 elemente din lista
+        checkScoresNumber();
     }
     private void checkScoresNumber() {
         var length = scores.Length;
@@ -36,21 +38,21 @@ public class ScoreDisplay : MonoBehaviour
             length= 3;
         switch (length) {
             case 1:
-                populateScores(Score1, length - 1);
+                populateScores(Score1, length - 3);
                 Score1.SetActive(true);
                 break;
             case 2:
-                populateScores(Score1, length - 1);
+                populateScores(Score1, length - 3);
                 Score1.SetActive(true);
                 populateScores(Score2, length - 2);
                 Score2.SetActive(true);
                 break;
             case 3:
-                populateScores(Score1, length - 1);
+                populateScores(Score1, length - 3);
                 Score1.SetActive(true);
                 populateScores(Score2, length - 2);
                 Score2.SetActive(true);
-                populateScores(Score3, length - 3);
+                populateScores(Score3, length - 1);
                 Score3.SetActive(true);
                 break;
             default:

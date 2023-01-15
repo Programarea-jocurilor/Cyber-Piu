@@ -26,8 +26,8 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
    {
-     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        FindObjectOfType<SoundManager>().PlaySound("ButtonPress");
    }
    
   //  ***
@@ -90,16 +90,19 @@ public class MainMenu : MonoBehaviour
 
     public void Resume() //ca sa o pot folosi si pentru Resume Button
     {   
+        FindObjectOfType<SoundManager>().PlaySound("ButtonPress");
         pauseMenu.SetActive(false);
         Time.timeScale=1f;
         gameIsPaused=false;
     }
 
     public void Pause()
-    {    Debug.Log("Pauza");
-     pauseMenu.SetActive(true);
-     Time.timeScale=0f;
-     gameIsPaused=true;
+    {
+        FindObjectOfType<SoundManager>().PlaySound("ButtonPress");    
+        Debug.Log("Pauza");
+        pauseMenu.SetActive(true);
+        Time.timeScale=0f;
+        gameIsPaused=true;
     }
  public void LoadMenu()
     {
@@ -133,6 +136,7 @@ public class MainMenu : MonoBehaviour
 // ****
    public void QuitGame()
    {
+    FindObjectOfType<SoundManager>().PlaySound("ButtonPress");
     Debug.Log("QUIT");
     Application.Quit();
    }

@@ -10,6 +10,7 @@ public class Disolve : MonoBehaviour
     float fade =1f;
 
     public Health playerHealth;
+    public GameObject finishCanvas;
 
     private void Awake()
     {
@@ -48,6 +49,8 @@ public class Disolve : MonoBehaviour
     IEnumerator WaitAndDie()
     {
         yield return new WaitForSeconds(1);
+        Time.timeScale=0;
+        finishCanvas.SetActive(true);
         this.gameObject.SetActive(false);
     }
 }

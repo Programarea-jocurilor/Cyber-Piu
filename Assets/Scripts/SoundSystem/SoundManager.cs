@@ -6,20 +6,20 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
 
-    public static SoundManager instance;
+    //public static SoundManager instance;
 
     private void Awake()
     {
-        //when we change the scene we want to not interupt the music
-        if(instance == null)
-            instance = this; //we create a soundManager in the new scene with the same values
-        else
-        {
-            Destroy(gameObject); //we destroy the empty soundManager that we create when entering a scene that already contains one
-            return;
-        }
+        // //when we change the scene we want to not interupt the music
+        // if(instance == null)
+        //     instance = this; //we create a soundManager in the new scene with the same values
+        // else
+        // {
+        //     Destroy(gameObject); //we destroy the empty soundManager that we create when entering a scene that already contains one
+        //     return;
+        // }
 
-        DontDestroyOnLoad(gameObject);
+        // DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
         {
