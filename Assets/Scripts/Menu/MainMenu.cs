@@ -22,8 +22,6 @@ public class MainMenu : MonoBehaviour
     public GameObject deathCanvas;
     public GameObject finishCanvas;
 
-
-
     public void PlayGame()
    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
@@ -94,6 +92,7 @@ public class MainMenu : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale=1f;
         gameIsPaused=false;
+
     }
 
     public void Pause()

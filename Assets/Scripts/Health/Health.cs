@@ -9,17 +9,29 @@ public class Health : MonoBehaviour
     public float currentHealth { get; private set; }
     private Animator anim;
     private bool dead;
+    [SerializeField] Color hurtColor;
+    private Renderer renderer;
     //public GameObject finishCanvas;
 
     private void Awake()
     {
         currentHealth = startingHealth;
         anim = GetComponent<Animator>();
+        renderer = GetComponent<Renderer>();
     }
     public void TakeDamage(float _damage)
     {
         if(!ChickenInteractionWithCollectibles.isInvincible)
+        {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
+            if(this.gameObject.tag == "Player")
+            {
+                renderer.material.color = new Color(0.5f, 0.2f, 0.4f, 1f);
+                StartCoroutine(HurtChanceColorBack());
+            }
+                
+        }
+            
 
         // if (currentHealth > 0)
         // {
@@ -60,5 +72,11 @@ public class Health : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //finishCanvas.SetActive(true);
         this.gameObject.SetActive(false);
+    }
+
+    private IEnumerator HurtChanceColorBack()
+    {
+        yield return new WaitForSeconds(0.5f);
+        renderer.material.color = new Color(1f, 1f, 1f, 1f);
     }
 }

@@ -13,6 +13,10 @@ public class SettingsMenu : MonoBehaviour
 
    	Resolution[] resolutions;
 
+	void Awake(){
+		FindObjectOfType<SoundManager>().PlaySound("ButtonPress");
+	}
+
 	void Start ()
 	{
 		resolutions = Screen.resolutions;

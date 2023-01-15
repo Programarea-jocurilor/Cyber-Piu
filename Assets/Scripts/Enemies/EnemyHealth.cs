@@ -23,6 +23,7 @@ public class EnemyHealth : MonoBehaviour
     public GameObject wall1;
 
     public GameObject wall2;
+
     private float fillValue;
     void Start()
     {
@@ -46,10 +47,12 @@ public class EnemyHealth : MonoBehaviour
 
         if(targetToFollow)
         {
-            if(Camera.main.WorldToScreenPoint(targetToFollow.position).z>0) //daca e in view-ul camerei, ii schimb scale-ul, ca sa se vada, si-l pun deasupra zombieului.
-            {   
-                slider.transform.position=Camera.main.WorldToScreenPoint(targetToFollow.position+healthBarOffset);//targetToFollow e in World Space, dar healthBarul e in Screen Space si, deci, facem conversie la un punct din Screen Space
-            }
+            // if(Camera.main.WorldToScreenPoint(targetToFollow.position).z>0) //daca e in view-ul camerei, ii schimb scale-ul, ca sa se vada, si-l pun deasupra zombieului.
+            // {   
+            //     slider.transform.position=Camera.main.WorldToScreenPoint(targetToFollow.position+healthBarOffset);//targetToFollow e in World Space, dar healthBarul e in Screen Space si, deci, facem conversie la un punct din Screen Space
+            // }
+            //fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
+            slider.transform.position = new Vector2(targetToFollow.transform.position.x, slider.transform.position.y);
         }
         if(currentHealth<=0)
         {
@@ -64,6 +67,7 @@ public class EnemyHealth : MonoBehaviour
                         
                     wall1.SetActive(false);
                     wall2.SetActive(false);
+                    FindObjectOfType<SoundManager>().PlaySound("BossDeath");
                 }
                 }
         }

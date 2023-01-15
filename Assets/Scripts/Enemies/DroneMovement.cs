@@ -46,6 +46,7 @@ public class DroneMovement : MonoBehaviour
         if (hit.collider!=null)
             if(hit.collider.tag=="Player")
             {   
+                FindObjectOfType<SoundManager>().PlaySound("EnemyShoot3");
                 GameObject objectToShootClone=Instantiate(objectToShoot,firePoint.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul
                 objectToShootClone.SetActive(true);
                 Destroy(objectToShootClone,5f);// il distrugem dupa 5 secunde ca sa nu ramana degeaba in hierarchy

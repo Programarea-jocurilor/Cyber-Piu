@@ -62,6 +62,7 @@ public class Shoot : MonoBehaviour
         RaycastHit2D hit=Physics2D.Linecast(firePoint.position,playerTransform.position);
         if(hit.collider.tag=="Player")
         {   
+            FindObjectOfType<SoundManager>().PlaySound("EnemyShoot2");
         if(this.gameObject.tag!="Boss")
             anim.SetTrigger("shoot");    
         GameObject objectToShootClone=Instantiate(objectToShoot,objectToShootTransform.position,Quaternion.identity); //cream efectiv cu ce trage enemy-ul

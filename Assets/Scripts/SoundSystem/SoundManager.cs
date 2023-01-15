@@ -47,4 +47,16 @@ public class SoundManager : MonoBehaviour
         s.source.outputAudioMixerGroup = s.group;
         s.source.Play();
     }
+
+    public void PauseSound(string _name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == _name);
+        if(s == null)
+        {
+            Debug.LogWarning("Sound: " + _name + " not found!");
+            return;
+        }
+        s.source.outputAudioMixerGroup = s.group;
+        s.source.Pause();
+    }
 }

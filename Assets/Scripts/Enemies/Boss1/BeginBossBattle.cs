@@ -16,6 +16,8 @@ public class BeginBossBattle : MonoBehaviour
 
     public GameObject[] spawnParticleSystem;
 
+    public GameObject healthbar;
+
     void Start()
     {
         Physics2D.IgnoreCollision(boss.GetComponent<CircleCollider2D>(),wall1.GetComponent<BoxCollider2D>());
@@ -27,6 +29,13 @@ public class BeginBossBattle : MonoBehaviour
         {
             //spawn boss:
             boss.SetActive(true);
+
+            healthbar.SetActive(true);
+
+            //change backgroundmusic
+            FindObjectOfType<SoundManager>().PauseSound("BackgroundMusic");
+            FindObjectOfType<SoundManager>().PlaySound("BossAppearance");
+            FindObjectOfType<SoundManager>().PlaySound("BossFight");
             
             //spawn ziduri:
             wall1.SetActive(true);

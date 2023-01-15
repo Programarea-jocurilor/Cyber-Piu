@@ -57,7 +57,8 @@ public class PlayerInputHandler : MonoBehaviour
             if (context.started)
         {
             AttackInputs[(int)CombatInputs.primary] = true;
-            FindObjectOfType<SoundManager>().PlaySound("PiuAttack");
+            if (Time.timeScale==1f)
+                FindObjectOfType<SoundManager>().PlaySound("PiuAttack");
         }
 
         if (context.canceled)
