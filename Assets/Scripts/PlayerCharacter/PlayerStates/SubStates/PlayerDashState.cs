@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerDashState : PlayerAbilityState
 {
@@ -31,13 +32,14 @@ public class PlayerDashState : PlayerAbilityState
         startTime = Time.unscaledTime;
 
         player.DashDirectionIndicator.gameObject.SetActive(true);
+        player.CollisionDamage.gameObject.SetActive(true);
 
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        player.CollisionDamage.gameObject.SetActive(false);
         if(Movement.CurrentVelocity.y > 0)
         {
             Movement.SetVelocityY(Movement.CurrentVelocity.y * playerData.dashEndYMultiplier);

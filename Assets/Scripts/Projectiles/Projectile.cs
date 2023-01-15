@@ -6,6 +6,9 @@ public class Projectile : MonoBehaviour
 {
     // // private AttackDetails attackDetails;
     // protected Core core;
+    [SerializeField]
+    private float attackDamage = 1f;    
+
     private float speed;
     private float travelDistance;
     private float xStartPos;
@@ -28,6 +31,13 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private Transform damagePosition;
 
+    [SerializeField]
+    private Vector2 knockbackAngle; 
+    [SerializeField]
+    private float knockbackStrength; 
+    private int facingDirection;
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -36,6 +46,13 @@ public class Projectile : MonoBehaviour
         rb.velocity = transform.right * speed;
 
         xStartPos = transform.position.x;
+        if(rb.velocity.x > 0)
+        {
+            facingDirection = 1;
+        } else
+        {
+            facingDirection = -1;
+        }
         //isGravityOn = false;
     }
 
@@ -61,6 +78,7 @@ public class Projectile : MonoBehaviour
         if(damageHit)
         {
             //damageHit.transform.SendMessage("Damage", 1f);
+            TriggerAttack();
             Destroy(gameObject);
         }
         if(groundHit)
@@ -89,5 +107,27 @@ public class Projectile : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
+    }
+
+    private void TriggerAttack()
+    {
+        // base.TriggerAttack();
+
+        Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(damagePosition.position, damageRadius+1, whatIsPlayer);
+
+        foreach (Collider2D collider in detectedObjects)
+        {
+            IDamageable damageable = collider.GetComponent<IDamageable>();
+            if(damageable != null)
+            {
+                damageable.Damage(attackDamage);
+            }
+
+            IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
+            if(knockbackable != null)
+            {
+                knockbackable.Knockback(knockbackAngle, knockbackStrength, facingDirection);
+            }
+        }
     }
 }

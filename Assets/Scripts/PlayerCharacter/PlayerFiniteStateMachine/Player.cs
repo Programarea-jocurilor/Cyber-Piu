@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
     // public BoxCollider2D MovementCollider { get; private set; }
+    public Transform CollisionDamage { get; private set; }    
     public PlayerInventory Inventory { get; private set; }
 
 
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         RB = GetComponent<Rigidbody2D>();
 
         DashDirectionIndicator = transform.Find("DashDirectionIndicator");
+        CollisionDamage = transform.Find("CollisionDamage");
         // MovementCollider = GetComponent<BoxCollider2D>();
         Inventory = GetComponent<PlayerInventory>();
 

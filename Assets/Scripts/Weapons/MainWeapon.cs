@@ -70,7 +70,6 @@ public class MainWeapon : Weapon
 
     public void RemoveFromDetected(Collider2D collision)
     {
-               
         IDamageable damageable = collision.GetComponent<IDamageable>();
 
         if (damageable != null)
@@ -85,5 +84,5 @@ public class MainWeapon : Weapon
             detectedKnockbackables.Remove(knockbackable);
         }
     }
-   
+
 }

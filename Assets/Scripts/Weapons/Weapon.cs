@@ -13,6 +13,9 @@ public class Weapon : MonoBehaviour
 
     protected Core core;
 
+	// protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+	// private Movement movement;
     protected int attackCounter;
 
     // protected virtual void Awake()
