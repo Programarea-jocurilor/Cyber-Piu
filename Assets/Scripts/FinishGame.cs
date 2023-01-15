@@ -12,6 +12,7 @@ public class FinishGame : MonoBehaviour
         {
             finish=true;
             Time.timeScale=0;
+            FindObjectOfType<SoundManager>().PlaySound("Finishline");
             finishCanvas.SetActive(true);
         }
     }

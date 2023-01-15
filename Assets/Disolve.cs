@@ -28,6 +28,7 @@ public class Disolve : MonoBehaviour
         if (playerHealth.currentHealth == 0)
         {
             isDissiolving = true;
+            FindObjectOfType<SoundManager>().PlaySound("Dead");
             StartCoroutine(WaitAndDie());
         }   
 
