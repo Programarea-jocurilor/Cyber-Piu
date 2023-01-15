@@ -46,6 +46,7 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        
         Core = GetComponentInChildren<Core>();
 
         StateMachine = new PlayerStateMachine();
