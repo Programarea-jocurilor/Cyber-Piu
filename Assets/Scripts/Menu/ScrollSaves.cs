@@ -4,6 +4,9 @@ using UnityEngine;
 using System;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+using Button = UnityEngine.UI.Button;
 
 public class ScrollSaves : MonoBehaviour
 {
@@ -14,6 +17,8 @@ public class ScrollSaves : MonoBehaviour
     private GameObject buttonPrefab;
 
     private Transform target;
+
+    private static int SCENE_OFFSET = 1;
 
 
     // Start is called before the first frame update
@@ -30,19 +35,23 @@ public class ScrollSaves : MonoBehaviour
 
             GameObject item_go = Instantiate(buttonPrefab, t2, Quaternion.identity);
 
+            item_go.GetComponent<Button>().onClick.AddListener(delegate { 
+                Debug.Log(saveName + "  clicked !!!"); 
+                SaveManager.Instance.setCurrentSave(saveName);
+                SceneManager.LoadScene(level);
+            });
+            
             foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
                 Debug.Log("Child name: " + comp.GetType().ToString() + " | " + comp.name);
             }
 
             // do something with the instantiated item -- for instance
             item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[0].text = "Save: " + saveName;
-            item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[1].text = "Level: " + level + "  Score: " + score;
+            item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[1].text = "Level: " + (level - SCENE_OFFSET) + "  Score: " + score;
             item_go.transform.SetParent(container.transform);
             item_go.transform.localScale = Vector2.one;
 
             index += 1;
-
-            // (scrollView as ScrollView).Add(item_go);
         }
     }
 

@@ -957,10 +957,10 @@ MonoBehaviour:
   m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
-  m_Elasticity: 0.1
+  m_Elasticity: 0.3
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 2
   m_Viewport: {fileID: 1140880470}
   m_HorizontalScrollbar: {fileID: 833890289}
   m_VerticalScrollbar: {fileID: 675774372}
@@ -1021,6 +1021,7 @@ GameObject:
   - component: {fileID: 1140880473}
   - component: {fileID: 1140880472}
   - component: {fileID: 1140880471}
+  - component: {fileID: 1140880474}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -1100,6 +1101,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1140880469}
   m_CullTransparentMesh: 1
+--- !u!114 &1140880474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140880469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf3df93be80b7ce4a966896057e67220, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  container: {fileID: 572388372}
+  buttonPrefab: {fileID: 1105216184502576764, guid: 36c6651a07f6ca84a887887ad2f80203, type: 3}
 --- !u!1 &1187256317
 GameObject:
   m_ObjectHideFlags: 0
