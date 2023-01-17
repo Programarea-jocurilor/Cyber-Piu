@@ -22,7 +22,7 @@ public class MenuState : MonoBehaviour
 
     private bool is_running = true;
     private float previousTimeScale;
-    private GameObject ResumeBtn;
+    private GameObject ResumeBtn, MenuBtn;
     private PlayerInput playerInput;
 
     public bool IsRunning()
@@ -44,6 +44,7 @@ public class MenuState : MonoBehaviour
         Time.timeScale = 0f;
 
         ResumeBtn.SetActive(true);
+        MenuBtn.SetActive(true);
     }
 
     public void ResumeGame()
@@ -59,7 +60,8 @@ public class MenuState : MonoBehaviour
         
         enablePlayerActions();
 
-        ResumeBtn.SetActive(false);    
+        ResumeBtn.SetActive(false);  
+        MenuBtn.SetActive(false);  
     }
 
     void disablePlayerActions()
@@ -85,8 +87,14 @@ public class MenuState : MonoBehaviour
     {
         Debug.Log("Started MenuState");
 
+        is_running = true;
+        Time.timeScale = 1f;
+
         ResumeBtn = GameObject.Find("ResumeButton");
         ResumeBtn.SetActive(false);
+
+        MenuBtn = GameObject.Find("BackMenuButton");
+        MenuBtn.SetActive(false);
 
         playerInput = GameObject.FindWithTag("Player")
                       .GetComponents(typeof(PlayerInput))[0] as PlayerInput;
