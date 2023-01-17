@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ca53fd23290cab469421181efd6d1ce, type: 3}
   m_Name: HH_WallJumpStateData
   m_EditorClassIdentifier: 
-  wallJumpSpeed: 45
+  wallJumpSpeed: 42
   wallJumpAngle: {x: 1, y: 1}
