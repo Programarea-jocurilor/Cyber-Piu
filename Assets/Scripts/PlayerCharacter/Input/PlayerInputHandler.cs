@@ -136,12 +136,20 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else if (context.canceled)
         {
-            DashInputStop = true;
+            Debug.Log("DashInput context cancel");
+            MenuState state = MenuState.Instance;
+            if (state.IsRunning()) {
+                DashInputStop = true;
+            }
         }      
     }
 
     public void OnDashDirectionInput(InputAction.CallbackContext context)
     {
+        if (!MenuState.Instance.IsRunning()) {
+            return;
+        }
+
         RawDashDirectionInput = context.ReadValue<Vector2>();
 
         if((playerInput.currentControlScheme == "Keyboard") && cam)

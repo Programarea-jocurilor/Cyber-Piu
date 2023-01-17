@@ -11,6 +11,7 @@ TagManager:
   - MarginRight
   - PatrollingEnemy
   - ParticleContainer
+  - PauseResume
   layers:
   - Default
   - TransparentFX

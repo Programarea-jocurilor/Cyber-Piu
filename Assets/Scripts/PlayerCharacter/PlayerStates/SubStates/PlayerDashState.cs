@@ -28,8 +28,9 @@ public class PlayerDashState : PlayerAbilityState
         isHolding = true;
         dashDirection = Vector2.right * Movement.FacingDirection;
 
+        Debug.Log("Player set Timescale: " + playerData.holdTimeScale);
         Time.timeScale = playerData.holdTimeScale;
-        startTime = Time.unscaledTime;
+        startTime = Time.time;
 
         player.DashDirectionIndicator.gameObject.SetActive(true);
         player.CollisionDamage.gameObject.SetActive(true);
@@ -74,10 +75,13 @@ public class PlayerDashState : PlayerAbilityState
                 float angle = Vector2.SignedAngle(Vector2.right, dashDirection);
                 player.DashDirectionIndicator.rotation = Quaternion.Euler(0f, 0f, angle - 45f);
 
-                if(dashInputStop || Time.unscaledTime >= startTime + playerData.maxHoldTime)
+                if(dashInputStop || Time.time >= startTime + playerData.maxHoldTime * playerData.holdTimeScale)
                 {
                     isHolding = false;
+                    
+                    Debug.Log("Finish hold time");
                     Time.timeScale = 1f;
+                    
                     startTime = Time.time;
                     Movement.CheckIfShouldFlip(Mathf.RoundToInt(dashDirection.x));
                     player.RB.drag = playerData.drag;
