@@ -12,10 +12,10 @@ public class NewGameButton : MonoBehaviour
         sm.setCurrentSave(sm.getNextNewSave());
         sm.updateCurrentSave(SaveManager.defaultStartSave());
 
-        Debug.Log("All saves: ");
-        foreach ((String savename, int level, float score) in SaveManager.getAllSaves()) {
-            Debug.Log(savename + " " + level + " - " + score);
-        }
+        // Debug.Log("All saves: ");
+        // foreach ((String savename, int level, float score) in SaveManager.getAllSaves()) {
+        //     Debug.Log(savename + " " + level + " - " + score);
+        // }
 
         SceneManager.LoadScene("Factory_1");
         ScoreManager.Instance.setOffset(Time.unscaledTime);

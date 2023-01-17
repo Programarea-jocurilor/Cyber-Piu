@@ -12,7 +12,6 @@ public class ResumeButton : MonoBehaviour
 
         Debug.Log(state);
 
-        Debug.Log("Resuming...");
         state.ResumeGame();
     }
 

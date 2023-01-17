@@ -604,7 +604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   container: {fileID: 572388372}
-  buttonPrefab: {fileID: 0}
+  buttonPrefab: {fileID: 1105216184502576764, guid: 36c6651a07f6ca84a887887ad2f80203, type: 3}
 --- !u!114 &572388375
 MonoBehaviour:
   m_ObjectHideFlags: 0

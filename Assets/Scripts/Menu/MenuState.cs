@@ -108,6 +108,9 @@ public class MenuState : MonoBehaviour
         ));
 
         Debug.Log(ResumeBtn);
+
+        // TODO: Remove this from here, for debug purposes
+        HighscoreManager.Instance.computeAndRegisterScore();
     }
 
     // Update is called once per frame

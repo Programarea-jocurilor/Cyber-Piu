@@ -16,10 +16,7 @@ public class ScrollSaves : MonoBehaviour
     [SerializeField]
     private GameObject buttonPrefab;
 
-    private Transform target;
-
-    private static int SCENE_OFFSET = 1;
-
+    private static int SCENE_OFFSET = 2;  
 
     // Start is called before the first frame update
     void Start()
