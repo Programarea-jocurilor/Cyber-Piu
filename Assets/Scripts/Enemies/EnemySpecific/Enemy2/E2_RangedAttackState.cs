@@ -56,6 +56,10 @@ public class E2_RangedAttackState : RangedAttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
+
+        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
+        projectileScript = projectile.GetComponent<Projectile>();
+        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
     }
 }
     
