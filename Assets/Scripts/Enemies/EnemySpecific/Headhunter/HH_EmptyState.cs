@@ -20,10 +20,18 @@ public class HH_EmptyState : EmptyState
     {
         base.Enter();
         player = GameObject.FindGameObjectWithTag("Player");
-        // if(player.transform.position.x > entity.transform.position.x)
-        // {
+        if(player)
+        {
+            if(player.transform.position.x > entity.transform.position.x && Movement.FacingDirection == -1)
+            {
+                Movement.Flip();
+            }
+            else if(player.transform.position.x < entity.transform.position.x && Movement.FacingDirection == 1)
+            {
+                Movement.Flip();
+            }       
+        }
 
-        // }
     }
 
     public override void Exit()
@@ -34,11 +42,19 @@ public class HH_EmptyState : EmptyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if(Mathf.Abs(Mathf.Abs(player.transform.position.x - entity.transform.position.x)) < 8f)
+        if(player)
         {
-            stateMachine.ChangeState(enemy.wallJumpState);
+            if(Mathf.Abs(Mathf.Abs(player.transform.position.x - entity.transform.position.x)) < 8f)
+            {
+                stateMachine.ChangeState(enemy.wallJumpState);
+            }
+            else 
+            {
+                stateMachine.ChangeState(enemy.rangedAttackState);
+            }
         }
 
-        stateMachine.ChangeState(enemy.rangedAttackState);
+
+ 
     }
 }

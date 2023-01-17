@@ -5,7 +5,7 @@ using UnityEngine;
 public class HH_WallJumpState : WallJumpState
 {
     private Headhunter enemy;
-
+    private bool isTouchingWallBack;
     public HH_WallJumpState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_WallJumpState stateData, Headhunter enemy) : base(etity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
@@ -14,11 +14,13 @@ public class HH_WallJumpState : WallJumpState
     public override void DoChecks()
     {
         base.DoChecks();
+        isTouchingWallBack = CollisionSenses.WallBack;
     }
 
     public override void Enter()
     {
         base.Enter();
+        isTouchingWallBack = false;
     }
 
     public override void Exit()
@@ -32,12 +34,16 @@ public class HH_WallJumpState : WallJumpState
 
         if (isWallJumpOver)
         {
-            //state transitions
+            stateMachine.ChangeState(enemy.emptyState);
         }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        if(isTouchingWallBack)
+        {
+            Movement.SetVelocity(stateData.wallJumpSpeed, stateData.wallJumpAngle, Movement.FacingDirection);
+        }
     }
 }

@@ -11,11 +11,11 @@ public class WallJumpState : State
     protected bool isAnimationFinished;
 
     #region Core Components
-	private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-	private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+	protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+	protected CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
 
-	private Movement movement;
-	private CollisionSenses collisionSenses;    
+	protected Movement movement;
+	protected CollisionSenses collisionSenses;    
     #endregion
     public WallJumpState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_WallJumpState stateData) : base(etity, stateMachine, animBoolName)
     {
@@ -47,7 +47,7 @@ public class WallJumpState : State
     {
         base.LogicUpdate();
 
-        if(isAnimationFinished && isGrounded)
+        if(/*isAnimationFinished && */isGrounded)
         {
             isWallJumpOver = true;
         }
