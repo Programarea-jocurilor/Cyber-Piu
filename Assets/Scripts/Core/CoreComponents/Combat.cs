@@ -11,7 +11,7 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
     private bool isKnockbackActive;
     public bool isDamageable = true;
     private float knockbackStartTime;
-
+    #region Core Components
 	private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
 	private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
 	private Stats Stats { get => stats ?? core.GetCoreComponent(ref stats); }
@@ -21,7 +21,8 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
 	private CollisionSenses collisionSenses;
 	private Stats stats;    
 	private ParticleManager particleManager;
-
+    #endregion
+    public bool damageTaken;
     public override void LogicUpdate()
     {
         CheckKnockback();
@@ -32,9 +33,9 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
         if(isDamageable)
         {
             Stats.DecreaseHealth(amount);
+            damageTaken = true;
 		    ParticleManager.StartParticlesWithRandomRotation(damageParticles);
         }
-
     }
 
     public void Knockback(Vector2 angle, float strength, int direction)
@@ -54,6 +55,7 @@ public class Combat : CoreComponent, IDamageable, IKnockbackable
         {
             isKnockbackActive = false;
             Movement.CanSetVelocity = true;
+            Movement?.SetVelocityX(0f);
         }
     }
 }

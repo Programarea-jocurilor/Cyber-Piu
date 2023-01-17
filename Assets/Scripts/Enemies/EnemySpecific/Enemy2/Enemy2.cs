@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy2 : Entity
 {
+    #region State References
     public E2_MoveState moveState { get; private set; }
     public E2_IdleState idleState { get; private set; }
     public E2_PlayerDetectedState playerDetectedState { get; private set; }
@@ -13,6 +14,10 @@ public class Enemy2 : Entity
     public E2_DeadState deadState { get; private set; }
     public E2_DodgeState dodgeState { get; private set; }
     public E2_RangedAttackState rangedAttackState { get; private set; }
+
+    #endregion
+
+    #region State Data
 
     [SerializeField]
     private D_MoveState moveStateData;
@@ -32,6 +37,7 @@ public class Enemy2 : Entity
     public D_DodgeState dodgeStateData;
     [SerializeField]
     private D_RangedAttackState rangedAttackStateData;
+    #endregion
 
     [SerializeField]
     private Transform meleeAttackPosition;
