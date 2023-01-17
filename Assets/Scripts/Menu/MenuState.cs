@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MenuState : MonoBehaviour
 {
@@ -98,9 +99,10 @@ public class MenuState : MonoBehaviour
 
         playerInput = GameObject.FindWithTag("Player")
                       .GetComponents(typeof(PlayerInput))[0] as PlayerInput;
-        Debug.Log("Player input: " + playerInput.GetType().ToString());
 
         previousTimeScale = Time.timeScale;
+
+        SaveManager.Instance.updateCurrentSave((SceneManager.GetActiveScene().buildIndex, Time.unscaledTime));
 
         Debug.Log(ResumeBtn);
     }
