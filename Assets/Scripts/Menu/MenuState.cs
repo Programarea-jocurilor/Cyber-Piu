@@ -102,7 +102,10 @@ public class MenuState : MonoBehaviour
 
         previousTimeScale = Time.timeScale;
 
-        SaveManager.Instance.updateCurrentSave((SceneManager.GetActiveScene().buildIndex, Time.unscaledTime));
+        SaveManager.Instance.updateCurrentSave((
+            SceneManager.GetActiveScene().buildIndex, 
+            ScoreManager.Instance.getScore()
+        ));
 
         Debug.Log(ResumeBtn);
     }
@@ -118,6 +121,10 @@ public class MenuState : MonoBehaviour
                 PauseGame();
             else
                 ResumeGame();
+        }
+
+        if (!is_running) {
+            ScoreManager.Instance.increaseOffset(Time.unscaledDeltaTime);
         }
     }
 }

@@ -18,6 +18,7 @@ public class NewGameButton : MonoBehaviour
         }
 
         SceneManager.LoadScene("Factory_1");
+        ScoreManager.Instance.setOffset(Time.unscaledTime);
     }
 
     // Start is called before the first frame update

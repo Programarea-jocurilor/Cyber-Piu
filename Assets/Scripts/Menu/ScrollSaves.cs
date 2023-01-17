@@ -39,6 +39,7 @@ public class ScrollSaves : MonoBehaviour
                 Debug.Log(saveName + "  clicked !!!"); 
                 SaveManager.Instance.setCurrentSave(saveName);
                 SceneManager.LoadScene(level);
+                ScoreManager.Instance.setOffset(Time.unscaledTime - score);
             });
             
             foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
