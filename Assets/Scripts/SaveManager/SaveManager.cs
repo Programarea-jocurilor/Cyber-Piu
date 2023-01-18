@@ -6,6 +6,9 @@ using System.Collections.Generic;
 public class SaveManager
 {
     private static SaveManager _instance = null;
+    
+    private static int MAX_SAVES = 10;
+    private static String PREFIX = "Save_";
 
     public static SaveManager Instance { get { 
         if (_instance == null)
@@ -34,15 +37,16 @@ public class SaveManager
 
     public static List<(String, int, float)> getAllSaves()
     {
-        String prefix = "Save_";
-        int save_id = 1;
+        int save_id = 0;
         List<(String, int, float)> saves = new List<(String, int, float)>();
 
-        while(checkSaveExists(prefix + save_id)) {
-            (int level, float score) = getSave(prefix + save_id);
+        while(++save_id <= MAX_SAVES) {
+            if (!checkSaveExists(PREFIX + save_id))
+                continue;
+                
+            (int level, float score) = getSave(PREFIX + save_id);
 
-            saves.Add((prefix + save_id, level, score));
-            save_id += 1;
+            saves.Add((PREFIX + save_id, level, score));
         }
 
         return saves;
@@ -61,13 +65,12 @@ public class SaveManager
 
     public String getNextNewSave()
     {
-        String prefix = "Save_";
         int save_id = 1;
-        while (checkSaveExists(prefix + save_id)) {
+        while (checkSaveExists(PREFIX + save_id)) {
             save_id += 1;
         }
 
-        return prefix + save_id;
+        return PREFIX + save_id;
     }
 
     public void setCurrentSave(String saveName)
