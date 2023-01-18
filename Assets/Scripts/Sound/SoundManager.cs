@@ -43,6 +43,10 @@ public class SoundManager
             menuAudio = m;
             headhunterAudio = h;
         }
+
+        factoryAudio.loop = true;
+        menuAudio.loop = true;
+        headhunterAudio.loop = true;
     }
 
     public void setVolume(float vol)
