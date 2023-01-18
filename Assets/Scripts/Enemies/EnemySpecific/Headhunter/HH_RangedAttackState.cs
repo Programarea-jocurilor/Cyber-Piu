@@ -53,6 +53,7 @@ public class HH_RangedAttackState : RangedAttackState
         {
             Combat.damageTaken = false;
             stateMachine.ChangeState(enemy.addsSpawnState);
+            // stateMachine.ChangeState(enemy.sweepState);
         }
         else if (isAnimationFinished)
         {

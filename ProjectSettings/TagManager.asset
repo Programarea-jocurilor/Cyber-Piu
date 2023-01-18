@@ -12,6 +12,7 @@ TagManager:
   - PatrollingEnemy
   - ParticleContainer
   - PauseResume
+  - TeleportLocation
   layers:
   - Default
   - TransparentFX
