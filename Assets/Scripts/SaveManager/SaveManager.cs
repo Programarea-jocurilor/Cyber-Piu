@@ -7,7 +7,7 @@ public class SaveManager
 {
     private static SaveManager _instance = null;
     
-    private static int MAX_SAVES = 10;
+    public const int MAX_SAVES = 10;
     private static String PREFIX = "Save_";
 
     public static SaveManager Instance { get { 
