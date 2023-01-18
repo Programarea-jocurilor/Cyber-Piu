@@ -9,6 +9,7 @@ public class Headhunter : Entity
     public HH_EmptyState emptyState { get; private set; }
     public HH_AddsSpawnState addsSpawnState { get; private set; }
     public HH_WallJumpState wallJumpState { get; private set; }
+    public HH_SweepState sweepState { get; private set; }
     #endregion
 
     #region State Data
@@ -20,6 +21,8 @@ public class Headhunter : Entity
     private D_AddsSpawnState addsSpawnStateData;
     [SerializeField]
     private D_WallJumpState wallJumpStateData;
+    [SerializeField]
+    private D_SweepState sweepStateData;
     #endregion
 
     // #region Core Components
@@ -36,6 +39,7 @@ public class Headhunter : Entity
         emptyState = new HH_EmptyState(this, stateMachine, "empty", emptyStateData, this);
         addsSpawnState = new HH_AddsSpawnState(this, stateMachine, "addsSpawn", addsSpawnStateData, this);
         wallJumpState = new HH_WallJumpState(this, stateMachine, "wallJump", wallJumpStateData, this);
+        sweepState = new HH_SweepState(this, stateMachine, "sweep", rangedAttackPosition, sweepStateData, this);
     }
 
     private void Start()
