@@ -25,6 +25,9 @@ public class Player : MonoBehaviour
     private PlayerData playerData;
     #endregion
 
+    [SerializeField]
+    private AudioSource dashSound;
+
     #region Components
     public Core Core { get; private set; }
     public Animator Anim { get; private set; }
@@ -58,7 +61,7 @@ public class Player : MonoBehaviour
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
-        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir", dashSound);
         PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
         SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack");
 

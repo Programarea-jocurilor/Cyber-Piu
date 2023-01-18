@@ -5,6 +5,8 @@ using System.Linq;
 
 public class PlayerDashState : PlayerAbilityState
 {
+    private AudioSource dash_sound;
+
     public bool CanDash { get; private set; }
     private bool isHolding;
     private bool dashInputStop;
@@ -15,9 +17,11 @@ public class PlayerDashState : PlayerAbilityState
     private Vector2 dashDirectionInput;
     private Vector2 lastAIPos;
 
-    public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerDashState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName, AudioSource srcDashSound) : base(player, stateMachine, playerData, animBoolName)
     {
+        dash_sound = srcDashSound;
     }
+
     public override void Enter()
     {
         base.Enter();
@@ -88,6 +92,7 @@ public class PlayerDashState : PlayerAbilityState
                     Movement.SetVelocity(playerData.dashVelocity, dashDirection);
                     player.DashDirectionIndicator.gameObject.SetActive(false);
                     PlaceAfterImage();
+                    dash_sound.Play();
                 }
             }
             else
