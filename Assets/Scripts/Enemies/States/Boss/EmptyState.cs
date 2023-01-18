@@ -9,6 +9,8 @@ public class EmptyState : State
     protected Stats stats;
 	protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
     protected Movement movement;
+	protected Combat Combat { get => combat ?? core.GetCoreComponent(ref combat); }
+    protected Combat combat;
     #endregion
 
     protected D_EmptyState stateData;
@@ -43,6 +45,5 @@ public class EmptyState : State
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        
     }
 }

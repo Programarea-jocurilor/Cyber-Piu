@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd8133177a7409944abc41093918ea70, type: 3}
   m_Name: HH_AddsSpawnStateData
   m_EditorClassIdentifier: 
+  enemies:
+  - {fileID: 4083423657499462152, guid: 79327f4f93b9fbf429e3d17988715923, type: 3}

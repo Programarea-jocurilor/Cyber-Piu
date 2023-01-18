@@ -42,9 +42,14 @@ public class HH_EmptyState : EmptyState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if(player)
+        if(Combat.damageTaken == true)
         {
-            if(Mathf.Abs(Mathf.Abs(player.transform.position.x - entity.transform.position.x)) < 8f)
+            Combat.damageTaken = false;
+            stateMachine.ChangeState(enemy.addsSpawnState);
+        }
+        else if(player)
+        {
+            if(Mathf.Abs(Mathf.Abs(player.transform.position.x - entity.transform.position.x)) < 5f)
             {
                 stateMachine.ChangeState(enemy.wallJumpState);
             }
