@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class HeadHunterDeath : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private bool move;
     public void Start()
     {
@@ -31,7 +31,7 @@ public class HeadHunterDeath : MonoBehaviour
     private void FinishAnimation()
     {
         HighscoreManager.Instance.computeAndRegisterScore();
-        Invoke("CompleteLevel", 5.0f);
+        Invoke("CompleteLevel", 3.0f);
     }
 
     private void CompleteLevel()
