@@ -7,6 +7,7 @@ public class BackMenuButton : MonoBehaviour
 {
     public void DoAction()
     {   
+        Debug.Log("Back menu pressed...");
         SceneManager.LoadScene(0);
     }
 

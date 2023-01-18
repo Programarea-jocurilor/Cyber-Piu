@@ -25,9 +25,14 @@ public class ScoreManager
         return Time.unscaledTime - scoreOffset;
     }
 
+    public String getStringScore(float actualScore)
+    {
+        return actualScore.ToString("0.0");
+    }
+
     public String getStringScore()
     {
-        return getScore().ToString("#.###");
+        return getStringScore(getScore());
     }
 
     public void increaseOffset(float delta)

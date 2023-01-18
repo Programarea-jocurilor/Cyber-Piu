@@ -21,6 +21,7 @@ public class HighscoreManager
         }
     }
 
+    private float lastSavedScore = 0f; 
     private const String fileName = "highscores";
     private static JsonDataService dataService = new JsonDataService();
 
@@ -29,7 +30,14 @@ public class HighscoreManager
         var scores = dataService.LoadData<List<(String, float)>>(fileName);
         scores.Add((saveName, score));
 
+        lastSavedScore = score;
+
         dataService.SaveData<List<(String, float)>>(fileName, scores);
+    }
+
+    public float getLastSavedScore()
+    {
+        return lastSavedScore;
     }
 
     private bool conditionToRegister()

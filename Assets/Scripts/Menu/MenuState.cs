@@ -9,6 +9,9 @@ using Text = TMPro.TextMeshProUGUI;
 public class MenuState : MonoBehaviour
 {
     [SerializeField]
+    private bool isEndgame = false;
+
+    [SerializeField]
     private Text saveNameText;
 
     private static MenuState _instance;
@@ -93,28 +96,35 @@ public class MenuState : MonoBehaviour
         is_running = true;
         Time.timeScale = 1f;
 
-        ResumeBtn = GameObject.Find("ResumeButton");
-        ResumeBtn.SetActive(false);
-
         MenuBtn = GameObject.Find("BackMenuButton");
-        MenuBtn.SetActive(false);
 
-        playerInput = GameObject.FindWithTag("Player")
+        if (!isEndgame) {
+            ResumeBtn = GameObject.Find("ResumeButton");
+            ResumeBtn.SetActive(false);
+            
+            MenuBtn.SetActive(false);
+
+            saveNameText.enabled = false;
+    
+            playerInput = GameObject.FindWithTag("Player")
                       .GetComponents(typeof(PlayerInput))[0] as PlayerInput;
+
+            SaveManager.Instance.updateCurrentSave((
+                SceneManager.GetActiveScene().buildIndex, 
+                ScoreManager.Instance.getScore()
+            ));
+        }
 
         previousTimeScale = Time.timeScale;
 
-        SaveManager.Instance.updateCurrentSave((
-            SceneManager.GetActiveScene().buildIndex, 
-            ScoreManager.Instance.getScore()
-        ));
-
-        saveNameText.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isEndgame)
+            return;
+        
         if (Input.GetKeyDown(KeyCode.Escape)) {
 
             // pause or unpause
