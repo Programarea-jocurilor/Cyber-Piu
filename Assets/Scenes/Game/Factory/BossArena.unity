@@ -1986,6 +1986,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 956805773}
+    - target: {fileID: 8505522758368878917, guid: ff0f63c90d17e1142bed0eaa9a63c903, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff0f63c90d17e1142bed0eaa9a63c903, type: 3}
 --- !u!1 &1987653126 stripped
