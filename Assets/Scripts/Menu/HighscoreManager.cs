@@ -32,9 +32,14 @@ public class HighscoreManager
         dataService.SaveData<List<(String, float)>>(fileName, scores);
     }
 
+    private bool conditionToRegister()
+    {
+        return SceneManager.GetActiveScene().buildIndex == 5;
+    }
+
     public void computeAndRegisterScore(String saveName)
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5) {
+        if (conditionToRegister()) {
             Debug.Log("Saving highscore....");
             HighscoreManager.Instance.SaveHighscore(
                     saveName, 
@@ -44,7 +49,7 @@ public class HighscoreManager
 
     public void computeAndRegisterScore()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 5) {
+        if (conditionToRegister()) {
             Debug.Log("Saving highscore....");
             HighscoreManager.Instance.SaveHighscore(
                     SaveManager.Instance.getCurrentSaveName(), 
