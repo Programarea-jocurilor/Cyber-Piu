@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game/Factory/Factory_4.unity
     guid: 20678c2aedc96b447a85f78b7816082e
+  - enabled: 1
+    path: Assets/Scenes/Game/Factory/BossArena.unity
+    guid: 2fadb4b90e03e25498a16766abd25d5c
   m_configObjects: {}

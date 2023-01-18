@@ -23,6 +23,8 @@ public class ScrollSaves : MonoBehaviour
     {
         container = GameObject.Find("Content");
 
+        Debug.Log("Entry prefab: " + buttonPrefab.name);
+
         int index = 0;
         foreach((String saveName, int level, float score) in SaveManager.getAllSaves()) {
 
@@ -31,7 +33,7 @@ public class ScrollSaves : MonoBehaviour
 
             GameObject item_go = Instantiate(buttonPrefab, t2, Quaternion.identity);
 
-            item_go.GetComponent<Button>().onClick.AddListener(delegate { 
+            item_go.GetComponentsInChildren<Button>()[0].onClick.AddListener(delegate { 
                 SaveManager.Instance.setCurrentSave(saveName);
                 SceneManager.LoadScene(level);
                 ScoreManager.Instance.setOffset(Time.unscaledTime - score);
