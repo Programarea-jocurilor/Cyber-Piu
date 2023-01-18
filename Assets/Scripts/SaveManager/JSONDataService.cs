@@ -7,6 +7,22 @@ using UnityEngine;
 
 public class JsonDataService : IDataService
 {
+    public bool DeleteFile(string RelativePath)
+    {
+        try {
+            string path = Application.persistentDataPath + RelativePath + ".json";
+
+            File.Delete(path);
+            
+        } catch (Exception e)
+        {
+            Debug.LogError("Encountered exception while deleting file: " + e.Message);
+            return false;
+        }
+        
+        return true;
+    }
+
     public bool FileExists(string RelativePath)
     {
         string path = Application.persistentDataPath + RelativePath + ".json";

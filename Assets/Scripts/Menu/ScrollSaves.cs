@@ -33,11 +33,26 @@ public class ScrollSaves : MonoBehaviour
 
             GameObject item_go = Instantiate(buttonPrefab, t2, Quaternion.identity);
 
-            item_go.GetComponentsInChildren<Button>()[0].onClick.AddListener(delegate { 
-                SaveManager.Instance.setCurrentSave(saveName);
-                SceneManager.LoadScene(level);
-                ScoreManager.Instance.setOffset(Time.unscaledTime - score);
-            });
+            Button[] buttons = item_go.GetComponentsInChildren<Button>();
+
+            if (buttons.Length < 2) {
+                Debug.Log("Why no 2 buttons? " + index + " - " + saveName);
+            }
+            else {
+                var LoadButton = buttons[0];
+                LoadButton.onClick.AddListener(delegate { 
+                    SaveManager.Instance.setCurrentSave(saveName);
+                    SceneManager.LoadScene(level);
+                    ScoreManager.Instance.setOffset(Time.unscaledTime - score);
+                });
+
+                var DeleteButton = buttons[1];
+                DeleteButton.onClick.AddListener(delegate { 
+                    SaveManager.Instance.deleteSave(saveName);
+                    item_go.SetActive(false);
+                });
+            }
+
             
             // foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
             //     Debug.Log("Child name: " + comp.GetType().ToString() + " | " + comp.name);

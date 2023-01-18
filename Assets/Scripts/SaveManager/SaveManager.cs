@@ -75,6 +75,11 @@ public class SaveManager
         current_saveName = saveName;
     }
 
+    public void deleteSave(String saveName)
+    {
+        dataService.DeleteFile(saveName);
+    }
+
     private static void updateSave(String saveName, (int, float) saveData)
     {
         Debug.Log("Saving: " + saveName);
