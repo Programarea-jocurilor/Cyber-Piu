@@ -8,8 +8,8 @@ public class SweepState : AttackState
     #region Core Components
 	protected Combat Combat { get => combat ?? core.GetCoreComponent(ref combat); }
     protected Combat combat;
-	protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
-    protected Movement movement;
+	// protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+    // protected Movement movement;
     #endregion
     protected GameObject projectile;
     protected Projectile projectileScript;

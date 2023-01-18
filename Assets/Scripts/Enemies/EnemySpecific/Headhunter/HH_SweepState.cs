@@ -5,10 +5,11 @@ using UnityEngine;
 public class HH_SweepState : SweepState
 {   
     private Headhunter enemy;
-    private Transform teleport;
+    private Transform[] teleport;
     private Rigidbody2D rb;
     private float gravityScaleSet;
-    private Transform currentTransform;
+    private Transform workSpace;
+
     public HH_SweepState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_SweepState stateData, Headhunter enemy) : base(etity, stateMachine, animBoolName, attackPosition, stateData)
     {
         this.enemy = enemy;
@@ -23,20 +24,18 @@ public class HH_SweepState : SweepState
     {
         base.Enter();
         isAnimationFinished = false;
-        currentTransform.position = enemy.transform.position;
         rb = enemy.GetComponent<Rigidbody2D>();
         gravityScaleSet = rb.gravityScale;
-        teleport = GameObject.FindWithTag("TeleportLocation").transform;
-        // Debug.Log(teleport);
         rb.gravityScale = 0f;
         Movement.SetVelocityZero();
-        enemy.transform.position = teleport.transform.position;
+        enemy.transform.position = stateData.teleportLocations[0].transform.position;
     }
 
     public override void Exit()
     {
         base.Exit();
-
+        rb.gravityScale = gravityScaleSet;
+        enemy.transform.position = stateData.teleportLocations[1].transform.position;
     }
 
     public override void FinishAttack()
@@ -50,8 +49,7 @@ public class HH_SweepState : SweepState
         base.LogicUpdate();
         if(isAnimationFinished)
         {
-            rb.gravityScale = gravityScaleSet;
-            enemy.transform.position = currentTransform.position;
+
             stateMachine.ChangeState(enemy.emptyState);
         }
     }
@@ -64,6 +62,14 @@ public class HH_SweepState : SweepState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        // projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
+        workSpace = attackPosition;
+
+        workSpace.transform.eulerAngles = new Vector3(
+        workSpace.transform.eulerAngles.x + 180,
+        workSpace.transform.eulerAngles.y + 180,
+        workSpace.transform.eulerAngles.z);
+        projectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, workSpace.rotation);
+        projectileScript = projectile.GetComponent<Projectile>();
+        projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
     }
 }
