@@ -34,14 +34,14 @@ public class HighscoreManager
 
     private bool conditionToRegister()
     {
-        return SceneManager.GetActiveScene().buildIndex == 5;
+        return true;
     }
 
     public void computeAndRegisterScore(String saveName)
     {
         if (conditionToRegister()) {
             Debug.Log("Saving highscore....");
-            HighscoreManager.Instance.SaveHighscore(
+            SaveHighscore(
                     saveName, 
                     ScoreManager.Instance.getScore());
         }
@@ -51,7 +51,7 @@ public class HighscoreManager
     {
         if (conditionToRegister()) {
             Debug.Log("Saving highscore....");
-            HighscoreManager.Instance.SaveHighscore(
+            SaveHighscore(
                     SaveManager.Instance.getCurrentSaveName(), 
                     ScoreManager.Instance.getScore());
         }

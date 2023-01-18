@@ -109,9 +109,6 @@ public class MenuState : MonoBehaviour
             ScoreManager.Instance.getScore()
         ));
 
-        // TODO: Remove this from here, for debug purposes
-        HighscoreManager.Instance.computeAndRegisterScore();
-
         saveNameText.enabled = false;
     }
 

@@ -29,6 +29,6 @@ public class HeadHunterDeath : MonoBehaviour
 
     private void FinishAnimation()
     {
-        //here
+        HighscoreManager.Instance.computeAndRegisterScore();
     }
 }
