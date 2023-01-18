@@ -161,7 +161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -275, y: -144.4}
+  m_AnchoredPosition: {x: -275, y: -153}
   m_SizeDelta: {x: 160, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &103769966
@@ -1450,6 +1450,7 @@ GameObject:
   - component: {fileID: 1343129458}
   - component: {fileID: 1343129460}
   - component: {fileID: 1343129459}
+  - component: {fileID: 1343129461}
   m_Layer: 5
   m_Name: TextSave
   m_TagString: Untagged
@@ -1574,6 +1575,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343129457}
   m_CullTransparentMesh: 1
+--- !u!114 &1343129461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343129457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85106f1d698555848a46a40c420f7d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveName: {fileID: 1343129459}
 --- !u!1 &1434492111
 GameObject:
   m_ObjectHideFlags: 0
