@@ -4,8 +4,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
+using Text = TMPro.TextMeshProUGUI;
+
 public class MenuState : MonoBehaviour
 {
+    [SerializeField]
+    private Text saveNameText;
+
     private static MenuState _instance;
 
     public static MenuState Instance { get { return _instance; } }
@@ -44,6 +49,7 @@ public class MenuState : MonoBehaviour
 
         ResumeBtn.SetActive(true);
         MenuBtn.SetActive(true);
+        saveNameText.enabled = true;
     }
 
     public void ResumeGame()
@@ -59,6 +65,7 @@ public class MenuState : MonoBehaviour
 
         ResumeBtn.SetActive(false);  
         MenuBtn.SetActive(false);  
+        saveNameText.enabled = false;
     }
 
     void disablePlayerActions()
@@ -104,6 +111,8 @@ public class MenuState : MonoBehaviour
 
         // TODO: Remove this from here, for debug purposes
         HighscoreManager.Instance.computeAndRegisterScore();
+
+        saveNameText.enabled = false;
     }
 
     // Update is called once per frame

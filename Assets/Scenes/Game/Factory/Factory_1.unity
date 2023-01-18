@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!20 &13991210 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8234693117602492521, guid: 900adbaabe090e54aa86b287b04b7391, type: 3}
+  m_PrefabInstance: {fileID: 4839406029482154283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &14271955
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,11 +718,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!20 &261310608 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8234693117602492521, guid: 900adbaabe090e54aa86b287b04b7391, type: 3}
-  m_PrefabInstance: {fileID: 4839406029482154283}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &320146676
 GameObject:
   m_ObjectHideFlags: 0
@@ -4492,7 +4492,7 @@ PrefabInstance:
     - target: {fileID: 5063159126589782498, guid: afba6c3c15f951048b5fcf585471da22, type: 3}
       propertyPath: m_Camera
       value: 
-      objectReference: {fileID: 261310608}
+      objectReference: {fileID: 13991210}
     - target: {fileID: 5063159126589782501, guid: afba6c3c15f951048b5fcf585471da22, type: 3}
       propertyPath: m_Name
       value: Canvas
