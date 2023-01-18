@@ -5,4 +5,5 @@ using UnityEngine;
 public class D_AddsSpawnState : ScriptableObject
 {
     public GameObject[] enemies;
+    public GameObject particles;
 }

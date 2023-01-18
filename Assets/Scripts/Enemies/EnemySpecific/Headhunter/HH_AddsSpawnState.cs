@@ -74,4 +74,12 @@ public class HH_AddsSpawnState : AddsSpawnState
     {
         base.FinishAnimation();
     }
+
+    public override void SpawnParticles()
+    {
+        base.SpawnParticles();
+        var target_position = enemy.transform.position;
+        target_position.x = enemy.transform.position.x + 1f;
+        GameObject.Instantiate(stateData.particles, target_position, Quaternion.Euler(0f, 0f, 0f));
+    }
 }

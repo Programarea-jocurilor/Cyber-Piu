@@ -20,5 +20,10 @@ public class AnimationToStatemachine : MonoBehaviour
     {
         addsSpawnState.FinishAnimation();
     }
+
+    private void SpawnParticles()
+    {
+        addsSpawnState.SpawnParticles();
+    }
     
 }

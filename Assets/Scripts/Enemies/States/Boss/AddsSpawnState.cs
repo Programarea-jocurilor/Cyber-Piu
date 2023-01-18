@@ -48,4 +48,9 @@ public class AddsSpawnState : State
         isAnimationFinished = true;
         spawnEnemies = true;
     }
+
+    public virtual void SpawnParticles()
+    {
+        
+    }
 }

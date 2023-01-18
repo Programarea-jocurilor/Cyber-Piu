@@ -52,7 +52,11 @@ public class Laser : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D external)
     {
-        TriggerAttack(external);
+        if(external.gameObject.tag != "Enemy")
+        {
+            TriggerAttack(external);
+        }
+
     }
 
     private void TriggerAttack(Collider2D collider)
@@ -74,7 +78,7 @@ public class Laser : MonoBehaviour
         if(damageable != null)
         {
             damageable.Damage(attackDamage);
-            Debug.Log("damaged");
+            // Debug.Log("damaged");
         }
 
         IKnockbackable knockbackable = collider.GetComponent<IKnockbackable>();
