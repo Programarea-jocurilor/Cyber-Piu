@@ -25,7 +25,6 @@ public class ScrollSaves : MonoBehaviour
 
         int index = 0;
         foreach((String saveName, int level, float score) in SaveManager.getAllSaves()) {
-            Debug.Log("Working on save: " + saveName + " | " + level + " | " + score);
 
             var t = container.transform;
             var t2 = Vector3.up * index * 10f + t.position;
@@ -33,15 +32,14 @@ public class ScrollSaves : MonoBehaviour
             GameObject item_go = Instantiate(buttonPrefab, t2, Quaternion.identity);
 
             item_go.GetComponent<Button>().onClick.AddListener(delegate { 
-                Debug.Log(saveName + "  clicked !!!"); 
                 SaveManager.Instance.setCurrentSave(saveName);
                 SceneManager.LoadScene(level);
                 ScoreManager.Instance.setOffset(Time.unscaledTime - score);
             });
             
-            foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
-                Debug.Log("Child name: " + comp.GetType().ToString() + " | " + comp.name);
-            }
+            // foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
+            //     Debug.Log("Child name: " + comp.GetType().ToString() + " | " + comp.name);
+            // }
 
             // do something with the instantiated item -- for instance
             item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[0].text = "Save: " + saveName;

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadSave.unity
     guid: 728b505eec6cb1c448b6fa9ca79dc698
   - enabled: 1
+    path: Assets/Scenes/Highscores.unity
+    guid: 65afb97816035324f8c9f16f3248c07b
+  - enabled: 1
     path: Assets/Scenes/Game/Factory/Factory_1.unity
     guid: 7ec7b7c9800b48e4eb7dadc487ee9845
   - enabled: 1

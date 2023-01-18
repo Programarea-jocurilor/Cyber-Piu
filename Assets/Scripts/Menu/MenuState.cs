@@ -35,13 +35,11 @@ public class MenuState : MonoBehaviour
     {
         if (!is_running)
             return ;
-        Debug.Log("Doing Pause...");
 
         is_running = false;
 
         disablePlayerActions();
         previousTimeScale = Time.timeScale;
-        Debug.Log("Saved timescale: " + previousTimeScale);
         Time.timeScale = 0f;
 
         ResumeBtn.SetActive(true);
@@ -52,10 +50,8 @@ public class MenuState : MonoBehaviour
     {
         if (is_running)
             return ;
-        Debug.Log("Doing Resume...");
 
         Time.timeScale = previousTimeScale;
-        Debug.Log("New timescale: " + Time.timeScale);
         
         is_running = true;
         
@@ -86,7 +82,6 @@ public class MenuState : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Started MenuState");
 
         is_running = true;
         Time.timeScale = 1f;
@@ -107,8 +102,6 @@ public class MenuState : MonoBehaviour
             ScoreManager.Instance.getScore()
         ));
 
-        Debug.Log(ResumeBtn);
-
         // TODO: Remove this from here, for debug purposes
         HighscoreManager.Instance.computeAndRegisterScore();
     }
@@ -117,7 +110,6 @@ public class MenuState : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) {
-            Debug.Log("Escape key pressed");
 
             // pause or unpause
             if (is_running) 
