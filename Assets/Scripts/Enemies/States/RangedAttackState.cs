@@ -5,7 +5,8 @@ using UnityEngine;
 public class RangedAttackState : AttackState
 {
     protected D_RangedAttackState stateData;
-
+	protected Combat Combat { get => combat ?? core.GetCoreComponent(ref combat); }
+    protected Combat combat;
     protected GameObject projectile;
     protected Projectile projectileScript;
 

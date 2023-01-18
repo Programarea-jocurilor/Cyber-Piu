@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerDodgeRollState : PlayerAbilityState
 {
-//    public bool CanDodgeRoll { get; private set; }
+    public bool CanDodgeRoll { get; private set; }
     private int dodgeRollDirection;
 
     private float lastDodgeRollTime;
@@ -24,6 +24,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
         player.InputHandler.UseDodgeRollInput();
         dodgeRollDirection = Movement.FacingDirection;
         Combat.isDamageable = false;
+        CanDodgeRoll = false;
     }
 
     public override void Exit()
@@ -51,7 +52,7 @@ public class PlayerDodgeRollState : PlayerAbilityState
 
     public bool CheckIfCanDodgeRoll()
     {
-        return Time.time >= lastDodgeRollTime + playerData.dodgeRollCooldown && CollisionSenses.Ground;
+        return (Time.time >= lastDodgeRollTime + playerData.dodgeRollCooldown) && CollisionSenses.Ground;
     }
 
     private void CheckIfShouldPlaceAfterImage()

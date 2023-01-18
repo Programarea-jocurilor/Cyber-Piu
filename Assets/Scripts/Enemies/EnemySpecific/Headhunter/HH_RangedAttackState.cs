@@ -49,8 +49,12 @@ public class HH_RangedAttackState : RangedAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-
-        if (isAnimationFinished)
+        if(Combat.damageTaken == true)
+        {
+            Combat.damageTaken = false;
+            stateMachine.ChangeState(enemy.addsSpawnState);
+        }
+        else if (isAnimationFinished)
         {
             stateMachine.ChangeState(enemy.emptyState);
         }
