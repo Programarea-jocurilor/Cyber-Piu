@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HeadHunterDeath : MonoBehaviour
 {
@@ -30,5 +31,11 @@ public class HeadHunterDeath : MonoBehaviour
     private void FinishAnimation()
     {
         HighscoreManager.Instance.computeAndRegisterScore();
+        Invoke("CompleteLevel", 5.0f);
+    }
+
+    private void CompleteLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
