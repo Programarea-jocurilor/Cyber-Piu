@@ -32,7 +32,7 @@ public class DroneMovement : MonoBehaviour
     void Update()
     {
         timer+=Time.deltaTime;
-        if(timer>1) //daca au trecut 2 secunde
+        if(timer>2) //daca au trecut 2 secunde
         {
             timer=0; //resetam timerul
             EnemyShoot();//trage

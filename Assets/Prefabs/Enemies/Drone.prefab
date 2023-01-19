@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 7442014550240285103}
   m_Layer: 6
   m_Name: Drone
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 3
+  hurtColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!95 &7442014550240285103
 Animator:
   serializedVersion: 4

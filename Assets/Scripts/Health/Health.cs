@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
     }
     public void TakeDamage(float _damage)
     {
-        if(!ChickenInteractionWithCollectibles.isInvincible)
+        if(!ChickenInteractionWithCollectibles.isInvincible || this.gameObject.tag != "Player")
         {
             currentHealth = Mathf.Clamp(currentHealth - _damage, 0, startingHealth);
             if(this.gameObject.tag == "Player")

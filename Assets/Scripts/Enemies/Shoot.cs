@@ -33,7 +33,7 @@ public class Shoot : MonoBehaviour
     
         distance=Vector2.Distance(transform.position,playerTransform.position);
         if(this.gameObject.tag!="Boss")
-            {if(distance<100)// trage doar daca suntem la o distanta mai mica de 10
+            {if(distance<20)// trage doar daca suntem la o distanta mai mica de 20
         {
             timer+=Time.deltaTime;
             if(timer>2 && enemyHealth.currentHealth > 0) //daca au trecut 2 secunde
