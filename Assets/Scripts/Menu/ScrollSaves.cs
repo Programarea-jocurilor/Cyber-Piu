@@ -53,11 +53,6 @@ public class ScrollSaves : MonoBehaviour
                 });
             }
 
-            
-            // foreach (TMPro.TextMeshProUGUI comp in item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()) {
-            //     Debug.Log("Child name: " + comp.GetType().ToString() + " | " + comp.name);
-            // }
-
             // do something with the instantiated item -- for instance
             item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[0].text = "Save: " + saveName;
             item_go.GetComponentsInChildren<TMPro.TextMeshProUGUI>()[1].text = "Level: " + (level - SCENE_OFFSET) + "  Score: " + score;

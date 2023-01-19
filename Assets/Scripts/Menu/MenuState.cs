@@ -8,6 +8,7 @@ using Text = TMPro.TextMeshProUGUI;
 
 public class MenuState : MonoBehaviour
 {
+    // ar trebui stersa variabila asta
     [SerializeField]
     private bool isEndgame = false;
 
@@ -28,6 +29,7 @@ public class MenuState : MonoBehaviour
         }
     }
 
+    private const float NORMAL_GAME_SPEED = 1f;
 
     private bool is_running = true;
     private float previousTimeScale;
@@ -94,7 +96,7 @@ public class MenuState : MonoBehaviour
     {
 
         is_running = true;
-        Time.timeScale = 1f;
+        Time.timeScale = NORMAL_GAME_SPEED;
 
         MenuBtn = GameObject.Find("BackMenuButton");
 
@@ -125,6 +127,7 @@ public class MenuState : MonoBehaviour
         if (isEndgame)
             return;
         
+        // escape key event;
         if (Input.GetKeyDown(KeyCode.Escape)) {
 
             // pause or unpause
@@ -134,6 +137,7 @@ public class MenuState : MonoBehaviour
                 ResumeGame();
         }
 
+        // take care of score
         if (!is_running) {
             ScoreManager.Instance.increaseOffset(Time.unscaledDeltaTime);
         }

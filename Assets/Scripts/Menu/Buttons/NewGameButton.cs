@@ -15,15 +15,6 @@ public class NewGameButton : MonoBehaviour
     private const float NO_SAVES_DURATION = 2.5f;
     private float whenToDissapear = -1;
 
-    IEnumerator WaitAndHide(float duration)
-    {
-        Debug.Log("Start of wait");
-        //This is a coroutine
-        yield return new WaitForSecondsRealtime(duration);   //Wait
-        Debug.Log("After wait");
-        manySavesText.enabled = false;
-    }
-
     public void DoAction()
     {
         SaveManager sm = SaveManager.Instance;

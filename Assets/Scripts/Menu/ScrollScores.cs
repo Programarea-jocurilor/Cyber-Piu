@@ -34,7 +34,7 @@ public class ScrollScores : MonoBehaviour
             var t = container.transform;
             var t2 = Vector3.up * index * 10f + t.position;
 
-            GameObject item_go = Instantiate(buttonPrefab, t2, Quaternion.identity);
+            GameObject item_go = Instantiate(buttonPrefab);
             
             // do something with the instantiated item -- for instance
             

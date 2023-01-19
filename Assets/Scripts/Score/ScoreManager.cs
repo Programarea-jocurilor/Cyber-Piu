@@ -5,6 +5,11 @@ public class ScoreManager
 {
     private static ScoreManager _instance = null;
 
+    private ScoreManager()
+    {
+        
+    }
+
     public static ScoreManager Instance { get { 
         if (_instance == null)
             _instance = new ScoreManager();
